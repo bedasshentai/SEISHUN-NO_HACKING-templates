@@ -1,3 +1,41 @@
+## 排版规范
+
+## 标题层级规范
+
+本项目使用 LaTeX 编写文档，定义了以下标题层级：
+
+| 层级 | 命令 | 编号 | 是否进入目录 | 用途 |
+|------|------|------|--------------|------|
+| 1 | `\section` | 是（1，2，…） | 是 | 大章节（如“数学”、“数据结构”） |
+| 2 | `\subsection` | 是（1.1，1.2，…） | 是 | 章节内主题（如“多项式”、“图论基础”） |
+| 3 | `\subsubsection` | 是（1.1.1，1.1.2，…） | 是 | 具体算法/知识点（如“快速傅里叶变换”） |
+| 4 | `\subsubsubsection` | **否** | **否** | 知识点内部的细分（如“蝶形运算推导”、“优化技巧”） |
+
+### `\subsubsubsection` 使用规范
+
+- **定义**：已在 `latex-pre.tex` 中预置，格式为加粗、正常字号、上下留白。
+- **适用场景**：当 `\subsubsection` 下的内容需要进一步划分小节，但又不希望增加编号或目录项时使用。
+- **禁止跳级**：只能在 `\subsubsection` 内部使用，不能直接在 `\section` 或 `\subsection` 下使用。
+- **数量控制**：一个 `\subsubsection` 内最多使用 3–4 个 `\subsubsubsection`，避免层级过深。
+- **命名**：标题应简明扼要，末尾不加标点。
+
+由于 `\subsubsubsection` 不进入目录，建议仅在长文档中用于视觉分隔，不要过度依赖。
+
+### 示例
+
+```latex
+\subsubsection{快速傅里叶变换（FFT）}
+
+\subsubsubsection{算法原理}
+... 内容 ...
+
+\subsubsubsection{蝶形运算优化}
+... 内容 ...
+
+\subsubsubsection{迭代实现}
+... 内容 ...
+```
+
 ## 这是什么？
 
 这是一个借助于 GitHub Action 实现自动生成算法模板的项目！
@@ -156,12 +194,6 @@ contents:
 你可以通过更改 `latex-pre.tex` 和 `latex-post.tex` 达成效果。
 
 同时，本项目提供更加紧凑的格式，在项目根目录的 `config.yml` 中修改 `latex-pre` 字段为 `latex-compact-pre.tex` 即可。
-
-### 更改字体
-
-你可以通过更改修改 `script.sh` 文件修改下载的字体，并在 `latex-pre.tex` 中指定字体。
-
-目前所使用的英文字体为 Inconsolata LGC Nerd Font Mono，位于 [inconsolata-nerd-font](https://www.ctan.org/pkg/inconsolata-nerd-font) 包中；所使用的中文字体为 Source Han Sans HW SC，[Regular](https://raw.githubusercontent.com/adobe-fonts/source-han-sans/release/OTF/SimplifiedChineseHW/SourceHanSansHWSC-Regular.otf) 和 [Bold](https://raw.githubusercontent.com/adobe-fonts/source-han-sans/release/OTF/SimplifiedChineseHW/SourceHanSansHWSC-Bold.otf)。
 
 ### 本地电脑上编译为 PDF
 
