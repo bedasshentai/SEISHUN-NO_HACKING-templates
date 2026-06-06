@@ -1,0 +1,13 @@
+数论分块是为了解决 $f(n) = \sum\limits_{i = 1}^{n}\left\lfloor\frac{n}{i}\right\rfloor g(i)$ 形式求值的一种算法，他可以在 $O(\sqrt{n})$ 的时间内求出上述和式。
+
+我们可以发现 $\left\lfloor\frac{n}{i}\right\rfloor$ 在一个区间内的取值是一样的，因此我们考虑求出这段区间 $[l, r]$，并预处理出 $g(n)$ 的前缀和，每次对一个区间段进行求值，就可以做到 $O(\sqrt{n})$ 的复杂度。
+
+\textbf{证明}：
+\begin{itemize}
+    \item 当 $0 < x \le \sqrt{n}$ 时，$\left\lfloor\frac{n}{x}\right\rfloor$ 的取值不超过 $\sqrt{n}$ 个，这是显然的。
+    \item 当 $x > \sqrt{n}$ 时，$\left\lfloor\frac{n}{x}\right\rfloor$ 的取值不超过 $\sqrt{n}$ 个，因为 $0 < \left\lfloor\frac{n}{x}\right\rfloor < \sqrt{n}$ 是有限的。
+\end{itemize}
+
+于是我们可以通过迅速求出边界来解决问题，若左边界 $l$ 已知，则右边界不难求出 $r = \left\lfloor\frac{n}{\left\lfloor\frac{n}{l}\right\rfloor}\right\rfloor$，然后令 $l = r + 1$ 继续遍历。
+
+\textbf{证明}：设 $k = \left\lfloor\frac{n}{l}\right\rfloor$，则 $k \le \frac{n}{l}$，可知 $l \le \left\lfloor\frac{n}{k}\right\rfloor$。而 $r = \left\lfloor\frac{n}{\left\lfloor\frac{n}{l}\right\rfloor}\right\rfloor = \left\lfloor\frac{n}{k}\right\rfloor \ge \left\lfloor\frac{n}{\frac{n}{l}}\right\rfloor = l$，故 $r$ 为所有满足 $i \in [l', r'], k = \left\lfloor\frac{n}{i}\right\rfloor$ 的最大值 $r'$。

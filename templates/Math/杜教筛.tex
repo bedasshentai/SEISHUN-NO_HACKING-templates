@@ -1,0 +1,25 @@
+求积性函数 $f(n)$ 的前缀和，即 $\sum\limits_{i = 1}^{n} f(i)$。
+
+考虑狄利克雷卷积能否帮助我们优化。
+
+\[
+\begin{aligned}
+\sum_{i = 1}^{n}(f * g)(i) &= \sum_{i = 1}^{n}\sum_{d \mid i}f(d)g\left(\frac{i}{d}\right) \\
+&= \sum_{d = 1}^{n}\sum_{i = 1}^{\lfloor\frac{n}{d}\rfloor} g(d) f(i) \\
+&= \sum_{d = 1}^{n} g(d) \left( \sum_{i = 1}^{\lfloor\frac{n}{d}\rfloor} f(i) \right)
+\end{aligned}
+\]
+
+记 $S(n) = \sum\limits_{i = 1}^{n} f(i)$，则有：
+
+\[
+\sum_{i = 1}^{n}(f * g)(i) = \sum_{d = 1}^{n} g(d) \, S\!\left( \left\lfloor \frac{n}{d} \right\rfloor \right)
+\]
+
+欲求 $S(n)$，可令 $d = 1$ 发现：
+
+\[
+g(1) S(n) = \sum_{i = 1}^{n} (f * g)(i) - \sum_{d = 2}^{n} g(d) \, S\!\left( \left\lfloor \frac{n}{d} \right\rfloor \right)
+\]
+
+如果我们能找到一个函数 $g(n)$ 使得 $(f * g)(n)$ 与 $g(n)$ 的前缀和能够快速求出，那么 $f(n)$ 的前缀和就可以通过数论分块快速求出。

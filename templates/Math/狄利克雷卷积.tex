@@ -1,0 +1,211 @@
+定义在数论函数（在 $\mathbb{Z_+}$ 上定义的函数）之间的一种二元运算。
+
+\subsubsubsection{定义}
+\[
+(f * g)(n) = \sum_{xy=n} f(x)g(y) = \sum_{d \mid n} f(d)g\!\left(\frac{n}{d}\right)
+\]
+
+\subsubsection{常见函数}
+
+\subsubsubsection{单位函数}
+\[
+\varepsilon(n) = [n = 1]
+\]
+其中 $[P]$ 为艾弗森括号，当且仅当 $P$ 为真时为 $1$，否则为 $0$。
+
+\subsubsubsection{常数函数}
+\[
+\mathbf{1}(n) = 1
+\]
+
+\subsubsubsection{幂函数}
+\[
+\operatorname{Id}_k(n) = n^k
+\]
+特别的，当 $k = 1$ 时为恒等函数 $\operatorname{Id}(n) = n$，$k = 0$ 时为常数函数 $\mathbf{1}(n) = 1$。
+
+\subsubsubsection{除数函数}
+\[
+\sigma_k(n) = \sum_{d\mid n} d^{k}
+\]
+特别的，当 $k = 1$ 时为因数和函数 $\sigma(n) = \sum_{d\mid n} d$，$k = 0$ 时为因数个数函数 $d(n) = 1$（通常记作 $\tau(n)$ 或 $\sigma_0(n)$）。
+
+\subsubsubsection{欧拉函数}
+\[
+\varphi(n) = \prod_{\substack{p_i \mid n \\ p_i \in \mathbb{P}}} (p_i - 1) = \sum_{i=1}^{n} [\gcd(i, n)=1]
+\]
+欧拉函数代表不大于 $n$ 的正整数与 $n$ 互质的数的个数。
+
+\subsubsubsection{莫比乌斯函数}
+\[
+\mu(n) = 
+\begin{cases}
+1 & n = 1 \\
+(-1)^k & n \text{ 不含平方数因子，且 } n = p_1 p_2 \cdots p_k \\
+0 & n \text{ 含平方数因子}
+\end{cases}
+\]
+
+\subsubsection{积性函数与完全积性函数}
+
+\subsubsubsection{积性函数}
+$f(1) = 1$ 且当 $\gcd(a, b) = 1$ 时满足 $f(a)f(b) = f(ab)$ 的函数称为积性函数。
+
+\subsubsubsection{完全积性函数}
+是积性函数的强形式，$f(1) = 1$，且 $\forall a, b \in D$，$f(a)f(b) = f(ab)$ 的函数称为完全积性函数。
+
+\subsubsection{狄利克雷运算的性质}
+
+\subsubsubsection{封闭性}
+对于积性函数，狄利克雷卷积的结果一定是积性函数。假设下列讨论中 $\gcd(a, b) = 1$。
+\[
+\begin{aligned}
+(f * g)(a) \cdot (f * g)(b) 
+&= \left( \sum_{d_1 \mid a} f(d_1)g\!\left(\frac{a}{d_1}\right) \right)
+   \left( \sum_{d_2 \mid b} f(d_2) g\!\left(\frac{b}{d_2}\right) \right) \\
+&= \sum_{d_1 \mid a}\sum_{d_2 \mid b} f(d_1)f(d_2)\, g\!\left(\frac{a}{d_1}\right) g\!\left(\frac{b}{d_2}\right) \\
+&= \sum_{d_1d_2 \mid ab} f(d_1 d_2)\, g\!\left(\frac{ab}{d_1 d_2}\right) \\
+&= \sum_{d \mid ab} f(d)\, g\!\left(\frac{ab}{d}\right) \\
+&= (f * g)(ab)
+\end{aligned}
+\]
+
+\subsubsubsection{交换律}
+\[
+(f * g)(n) = \sum_{xy=n} f(x)g(y) = \sum_{yx=n} f(y)g(x) = (g * f)(n)
+\]
+
+\subsubsubsection{结合律}
+\[
+\begin{aligned}
+((f * g) * h)(n) 
+&= \sum_{xy=n} (f * g)(x) \cdot h(y) \\
+&= \sum_{xy=n} \left( \sum_{uv=x} f(u)g(v) \right) h(y) \\
+&= \sum_{uvy=n} f(u)g(v)h(y) \\
+&= \sum_{uz=n} f(u) \left( \sum_{vy=z} g(v)h(y) \right) \\
+&= \sum_{uz=n} f(u) \cdot (g * h)(z) \\
+&= (f * (g * h))(n)
+\end{aligned}
+\]
+
+\subsubsubsection{分配律}
+\[
+\begin{aligned}
+(f * (g + h))(n) 
+&= \sum_{xy=n} f(x) \cdot (g + h)(y) \\
+&= \sum_{xy=n} f(x) \bigl( g(y) + h(y) \bigr) \\
+&= \sum_{xy=n} f(x)g(y) + \sum_{xy=n} f(x)h(y) \\
+&= (f * g)(n) + (f * h)(n)
+\end{aligned}
+\]
+
+\subsubsubsection{单位元}
+$\varepsilon(n) = [n = 1]$ 为狄利克雷卷积运算群的单位元，有如下性质：
+\[
+(\varepsilon * f)(n) = \sum_{d \mid n} \varepsilon(d) f\!\left(\frac{n}{d}\right) = f(n)
+\]
+
+\subsubsubsection{逆元}
+若 $f * g = \varepsilon$，则称 $g$ 为 $f$ 的狄利克雷逆元。
+
+\subsubsection{一些数论基本结论}
+
+\subsubsubsection{欧拉反演}
+\[
+n = \sum_{d \mid n} \varphi(d)
+\]
+
+\textbf{证明}：从 $1$ 遍历到 $n$，所有 $\gcd(i, n)$ 的值是唯一的，且为 $n$ 的因数。
+\[
+\begin{aligned}
+n &= \sum_{d \mid n}\sum_{i=1}^{n} [\gcd(i, n) = d] \\
+  &= \sum_{d \mid n}\sum_{i=1}^{n} \left[\gcd\!\left(\frac{i}{d}, \frac{n}{d}\right) = 1\right] \\
+  &= \sum_{d \mid n} \varphi\!\left(\frac{n}{d}\right) \\
+  &= \sum_{d \mid n} \varphi(d)
+\end{aligned}
+\]
+
+\subsubsubsection{莫比乌斯函数的性质}
+\[
+\sum_{d \mid n} \mu(d) = 
+\begin{cases}
+1 & n = 1 \\
+0 & \text{otherwise}
+\end{cases}
+\]
+
+\textbf{证明}：考虑对所有 $d$ 进行分类讨论：
+\begin{itemize}
+    \item 若 $d$ 含有平方数因子，则 $\mu(d) = 0$。
+    \item 若 $d$ 不含平方数因子，设 $n = p_1^{\alpha_1}p_2^{\alpha_2}\dots p_k^{\alpha_k}\ (k>0)$，$S \subseteq \{1,2,\dots,k\}$。
+          则有 $d = \prod_{i\in S} p_i$，此时 $\mu(d) = (-1)^{|S|}$。
+          对所有 $d$ 进行容斥：
+    \[
+    \sum_{S \subseteq \{1,2,\dots,k\}} (-1)^{|S|}
+    = \sum_{i=0}^{k} \binom{k}{i} (-1)^i
+    = (1-1)^k = 0.
+    \]
+\end{itemize}
+特别地，当 $k=0$ 时（即 $n=1$），有 $\mu(1)=1$。综上，
+\[
+\sum_{d\mid n} \mu(d) = 
+\begin{cases}
+1 & n=1 \\ 0 & \text{otherwise}
+\end{cases}
+\]
+
+\subsubsection{狄利克雷卷积结论}
+
+\subsubsubsection{$ \operatorname{Id}_k * \mathbf{1} = \sigma_k $}
+\[
+\begin{aligned}
+(\operatorname{Id}_k * \mathbf{1})(n) 
+&= \sum_{d\mid n} \operatorname{Id}_k(d) \cdot \mathbf{1}\!\left(\frac{n}{d}\right) \\
+&= \sum_{d\mid n} d^k = \sigma_k(n)
+\end{aligned}
+\]
+
+\subsubsubsection{$ \varphi * \mathbf{1} = \operatorname{Id} $}
+\[
+\begin{aligned}
+(\varphi * \mathbf{1})(n) 
+&= \sum_{d\mid n} \varphi(d) \cdot \mathbf{1}\!\left(\frac{n}{d}\right) \\
+&= \sum_{d\mid n} \varphi(d) = n = \operatorname{Id}(n)
+\end{aligned}
+\]
+
+\subsubsubsection{$ \mu * \mathbf{1} = \varepsilon $}
+\[
+\begin{aligned}
+(\mu * \mathbf{1})(n) 
+&= \sum_{d\mid n} \mu(d) \cdot \mathbf{1}\!\left(\frac{n}{d}\right) \\
+&= \sum_{d\mid n} \mu(d) = [n=1] = \varepsilon(n)
+\end{aligned}
+\]
+
+\subsubsubsection{$ \operatorname{Id} * \mu = \varphi $}
+由于 $\mu * \mathbf{1} = \varepsilon$，故 $\mu$ 为 $\mathbf{1}$ 的狄利克雷逆元。由 $\varphi * \mathbf{1} = \operatorname{Id}$ 得：
+\[
+\varphi * \mathbf{1} * \mu = \operatorname{Id} * \mu
+\]
+从而 $\varphi = \operatorname{Id} * \mu$。
+
+\subsubsubsection{$ \operatorname{Id}_k * \operatorname{Id}_k = \operatorname{Id}_k \cdot \sigma_0 $}
+\[
+\begin{aligned}
+(\operatorname{Id}_k * \operatorname{Id}_k)(n) 
+&= \sum_{d\mid n} \operatorname{Id}_k(d) \cdot \operatorname{Id}_k\!\left(\frac{n}{d}\right) \\
+&= \sum_{d\mid n} n^k = n^k \sum_{d\mid n} 1 \\
+&= (\operatorname{Id}_k \cdot \sigma_0)(n)
+\end{aligned}
+\]
+
+\subsubsubsection{$ \sigma_k * \mu = \operatorname{Id}_k $}
+\[
+\sigma_k * \mu = (\operatorname{Id}_k * \mathbf{1}) * \mu = \operatorname{Id}_k * (\mathbf{1} * \mu) = \operatorname{Id}_k * \varepsilon = \operatorname{Id}_k
+\]
+
+\subsubsubsection{基本原理}
+\[
+f * \mu = F \;\Longleftrightarrow\; F * \mathbf{1} = f
+\]
