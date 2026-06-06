@@ -1,0 +1,45 @@
+﻿contents:
+  - name: FFT
+    codes: FFT.cpp
+    code-pre: FFT-pre.tex
+  - name: NTT
+    codes: NTT.cpp
+    code-pre: NTT-pre.tex
+  - name: 多项式求逆
+    codes: Poly-inv.cpp
+    code-pre: Poly-inv.tex
+  - name: 多项式牛顿迭代
+    codes:
+    code-pre: Poly-Newton.tex
+  - name: 多项式开根
+    codes: Poly-sqrt.cpp
+    code-pre: Poly-sqrt.tex
+  - name: 多项式带余除法
+    codes: Poly-div.cpp
+    code-pre: Poly-div.tex
+  - name: 多项式积分/求导
+    codes: Poly-int.cpp
+    code-pre: Poly-int.tex
+  - name: 多项式求ln
+    codes: Poly-ln.cpp
+    code-pre: Poly-ln.tex
+  - name: 多项式求exp
+    codes: Poly-exp.cpp
+    code-pre: Poly-exp.tex
+  - name: 多项式快速幂(A[0]=1)
+    codes: Poly-pow1.cpp
+    code-pre: Poly-pow1.tex
+  - name: 多项式快速幂(A[0]!=1)
+    codes: Poly-pow2.cpp
+    code-pre: Poly-pow2.tex
+  - name: 多项式三角函数
+    codes: Poly-triangle.cpp
+    code-pre: Poly-triangle.tex
+  - name: MTT
+    codes: MTT.cpp
+    code-pre: MTT-pre.tex
+  - name: 分治FFT
+    codes: Poly-cdq.cpp
+    code-pre: Poly-cdq.tex
+  - name: 多项式全家桶
+    codes: Polynomial.cpp

@@ -1,0 +1,28 @@
+给定 $F(x),\,G(x)$，其中 $F(x)$ 为 $n$ 次多项式，$G(x)$ 为 $m$ 次多项式，请求出满足 $F(x) = G(x)Q(x) + R(x)$ 的 $Q(x)$ 与 $R(x)$。
+
+考虑到 $Q(x),\,R(x)$ 的最高次较小，我们可以选择翻转系数的方式来消去该部分。
+
+因为
+\[
+F\left(\frac{1}{x}\right) = G\left(\frac{1}{x}\right)Q\left(\frac{1}{x}\right) + R\left(\frac{1}{x}\right)
+\]
+即
+\[
+x^nF\left(\frac{1}{x}\right) = x^{m}G\left(\frac{1}{x}\right)\cdot x^{n-m}Q\left(\frac{1}{x}\right) + x^nR\left(\frac{1}{x}\right)
+\]
+记 $F^T(x)$ 表示 $F(x)$ 将高次项与低次项系数交换的翻转，也就是
+\[
+F^T(x) = G^T(x)Q^T(x) + x^{n-m+1}R^T(x)
+\]
+在模 $x^{n-m+1}$ 意义下，可以消去余数，即
+\[
+F^T(x) \equiv G^T(x)Q^T(x) \pmod{x^{n-m+1}}
+\]
+那么考虑求多项式逆元就可以求出
+\[
+Q^T(x) \equiv \frac{F^T(x)}{G^T(x)} \pmod{x^{n-m+1}}
+\]
+求出 $Q(x)$ 后，通过简单的移项操作就可以求出
+\[
+R(x) = F(x) - G(x)Q(x)
+\]

@@ -3,4 +3,5 @@
     codes:
       - disjoint_set_union.cpp
   - name: fenwick-tree
-    codes: fenwick-tree.cpp
+    codes:
+      - fenwick-tree.cpp

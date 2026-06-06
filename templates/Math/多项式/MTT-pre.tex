@@ -1,0 +1,10 @@
+\textbf{任意模数多项式乘法}
+
+三模数 NTT 固然可以，我们来试试拆系数 FFT（MTT），考虑 $F(x),\,G(x)$ 两个多项式改写为 $F(x) = A(x) + c \times B(x)$，$G(x) = C(x) + c \times D(x)$，其中 $c = 32768$。
+
+为计算 $F(x)G(x)$，我们有
+\[
+F(x)G(x) = A(x)C(x) + c \times \bigl(A(x)D(x) + B(x)C(x)\bigr) + c^2 \times B(x)D(x).
+\]
+
+令 $T(x) = C(x) + i \times D(x)$，我们可以通过 $T(x)$ 与 $A(x),\,B(x)$ 的卷积得到以上所有系数。上述算法使用了 $3$ 次 DFT，$2$ 次 IDFT，相较 $9$ 次 NTT 的三模数 NTT 来说慢那么一点，事实上，可以优化到 $4$ 次 FFT，这样可以比 NTT 更优。

@@ -1,0 +1,13 @@
+﻿contents:
+  - name: 子集枚举
+    codes: 子集枚举.cpp
+    code-pre: 子集枚举-pre.tex
+  - name: SOSDP
+    codes: SOSDP.cpp
+    code-pre: SOSDP-pre.tex
+  - name: Dirichlet 前缀和
+    codes: Dirichlet.cpp
+    code-pre: Dirichlet-pre.tex
+  - name: FWT
+    codes: FWT.cpp
+    # code-pre: 

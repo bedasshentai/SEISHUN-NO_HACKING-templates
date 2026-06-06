@@ -4,112 +4,170 @@
 \usepackage{lmodern}
 \usepackage{listings,xcolor}
 \usepackage{geometry}
+\usepackage[table]{xcolor}
 \usepackage{fontspec}
 \usepackage{graphicx}
-\usepackage[colorlinks, linkcolor=blue, anchorcolor=blue, citecolor=green]{hyperref} % 超链接颜色设置
+\usepackage[colorlinks, linkcolor=blue, anchorcolor=blue, citecolor=green]{hyperref}
 \usepackage{setspace}
 \usepackage{fancyhdr}
 \usepackage{titletoc}
+\usepackage{etoolbox}   % 用于计数器操作
 
-% 页面布局设置
-\geometry{a4paper, left=2cm, right=2cm, top=2.5cm, bottom=2.5cm} % 页面大小和边距
+% 页面布局
+\geometry{a4paper, left=2cm, right=2cm, top=2.5cm, bottom=2.5cm}
 
 % 字体设置
-\setCJKmainfont{Source Han Sans HW SC}[
-  ItalicFont={Source Han Sans HW SC},
-  ItalicFeatures={FakeSlant=0.2}
+\setCJKmainfont{SourceHanSansHWSC-Regular.otf}[
+  Path=./,
+  AutoFakeBold=1.5,
+  FakeSlant=0.05
 ]
-\setCJKsansfont{Source Han Sans HW SC}[
-  ItalicFont={Source Han Sans HW SC},
-  ItalicFeatures={FakeSlant=0.2}
+\setCJKsansfont{SourceHanSansHWSC-Regular.otf}[
+  Path=./,
+  AutoFakeBold=1.5,
+  FakeSlant=0.05
 ]
-\setCJKmonofont{Source Han Sans HW SC}[
-  ItalicFont={Source Han Sans HW SC},
-  ItalicFeatures={FakeSlant=0.2}
+\setCJKmonofont{SourceHanSansHWSC-Regular.otf}[
+  Path=./,
+  AutoFakeBold=1.5,
+  FakeSlant=0.05
 ]
 
 \setmainfont{Inconsolata LGC Nerd Font Mono}
 \setsansfont{Inconsolata LGC Nerd Font Mono}
 \setmonofont{Inconsolata LGC Nerd Font Mono}
 
-% 取消首行缩进和设置行间距
-\setlength{\parindent}{0pt} 
+% 取消首行缩进
+\setlength{\parindent}{0pt}
 
-% 页眉页脚设置
+% 页眉页脚
 \setlength{\headheight}{13pt}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\leftmark} % 页眉左侧显示章节名
-\fancyfoot[C]{\thepage} % 页脚中间显示页码
+\fancyhead[L]{\leftmark}
+\fancyfoot[C]{\thepage}
 
-% 代码样式设置
+% 代码样式
 \lstdefinestyle{cppstyle}{
-  language=C++, % 语言设置为 C++
+  language=C++,
   basicstyle=\ttfamily\small\linespread{1.1}\selectfont,
-  keywordstyle=\color{blue}\bfseries, % 关键字颜色
-  commentstyle=\color{gray}\itshape, % 注释颜色，斜体
-  stringstyle=\color{red}, % 字符串颜色
-  numbers=left, % 行号显示在左侧
-  numberstyle=\small\color{gray}, % 行号样式
-  stepnumber=1, % 行号递增
-  numbersep=10pt, % 行号和代码的间隔
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{red},
+  numbers=left,
+  numberstyle=\small\color{gray},
+  stepnumber=1,
+  numbersep=10pt,
   backgroundcolor=\color{gray!5},
-  showspaces=false, % 不显示空格
-  showstringspaces=false, % 字符串中不显示空格
-  breaklines=true, % 自动换行
-  frame=single, % 给代码添加边框
-  rulecolor=\color{black!30}, % 边框颜色
-  tabsize=4, % 设置 Tab 宽度
-  captionpos=b % 标题位置
+  showspaces=false,
+  showstringspaces=false,
+  breaklines=true,
+  breakatwhitespace=true,
+  frame=single,
+  rulecolor=\color{black!30},
+  tabsize=4,
+  captionpos=b
 }
 
 \lstdefinestyle{pythonstyle}{
-  language=Python, % 语言设置为 Python
+  language=Python,
   basicstyle=\ttfamily\small\linespread{1.1}\selectfont,
-  keywordstyle=\color{blue}\bfseries, % 关键字颜色
-  commentstyle=\color{gray}\itshape, % 注释颜色，斜体
-  stringstyle=\color{red}, % 字符串颜色
-  numbers=left, % 行号显示在左侧
-  numberstyle=\small\color{gray}, % 行号样式
-  stepnumber=1, % 行号递增
-  numbersep=10pt, % 行号和代码的间隔
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{red},
+  numbers=left,
+  numberstyle=\small\color{gray},
+  stepnumber=1,
+  numbersep=10pt,
   backgroundcolor=\color{gray!5},
-  showspaces=false, % 不显示空格
-  showstringspaces=false, % 字符串中不显示空格
-  breaklines=true, % 自动换行
-  frame=single, % 给代码添加边框
-  rulecolor=\color{black!30}, % 边框颜色
-  tabsize=4, % 设置 Tab 宽度
-  captionpos=b % 标题位置
+  showspaces=false,
+  showstringspaces=false,
+  breaklines=true,
+  breakatwhitespace=true,
+  frame=single,
+  rulecolor=\color{black!30},
+  tabsize=4,
+  captionpos=b
 }
 
 \lstdefinestyle{javastyle}{
-  language=Java, % 语言设置为 Java
+  language=Java,
   basicstyle=\ttfamily\small\linespread{1.1}\selectfont,
-  keywordstyle=\color{blue}\bfseries, % 关键字颜色
-  commentstyle=\color{gray}\itshape, % 注释颜色，斜体
-  stringstyle=\color{red}, % 字符串颜色
-  numbers=left, % 行号显示在左侧
-  numberstyle=\small\color{gray}, % 行号样式
-  stepnumber=1, % 行号递增
-  numbersep=10pt, % 行号和代码的间隔
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{red},
+  numbers=left,
+  numberstyle=\small\color{gray},
+  stepnumber=1,
+  numbersep=10pt,
   backgroundcolor=\color{gray!5},
-  showspaces=false, % 不显示空格
-  showstringspaces=false, % 字符串中不显示空格
-  breaklines=true, % 自动换行
-  frame=single, % 给代码添加边框
-  rulecolor=\color{black!30}, % 边框颜色
-  tabsize=4, % 设置 Tab 宽度
-  captionpos=b % 标题位置
+  showspaces=false,
+  showstringspaces=false,
+  breaklines=true,
+  breakatwhitespace=true,
+  frame=single,
+  rulecolor=\color{black!30},
+  tabsize=4,
+  captionpos=b
 }
 
-% 标题样式设置
+% 标题样式
 \usepackage{titlesec}
 \titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
 
-% 目录样式设置
+% 自定义内部小节标题（不编号，不进入目录）
+\newcommand{\subsubsubsection}[1]{%
+  \vspace{1.2ex plus 0.2ex}%
+  {\normalsize\bfseries #1}%
+  \vspace{0.8ex plus 0.1ex}\par
+}
+
+% === 自动分页：让 section, subsection, subsubsection 按层级智能分页 ===
+% 规则：
+% - 第一个标题不分页（避免目录后空白）
+% - 同一级标题之间分页（例如两个 section 之间分页）
+% - 从高级到低级（section -> subsection -> subsubsection）不分页（因为上级已分页）
+% - 从低级回到高级或同级（subsubsection -> subsection 或 subsubsection -> section 或 subsection -> section）会分页
+
+\newcounter{lastlevel}
+\setcounter{lastlevel}{0}
+
+\newcommand{\maybePageBreak}[1]{%
+  \ifnum \value{lastlevel}=0
+    % 第一个标题，不分页
+  \else
+    \ifnum #1 > \value{lastlevel}
+      % 标题层级加深（从高级到低级），不分页
+    \else
+      % 同级或降级，分页
+      \clearpage
+    \fi
+  \fi
+  \setcounter{lastlevel}{#1}
+}
+
+\let\oldsection\section
+\renewcommand{\section}{%
+  \maybePageBreak{1}%
+  \oldsection
+}
+
+\let\oldsubsection\subsection
+\renewcommand{\subsection}{%
+  \maybePageBreak{2}%
+  \oldsubsection
+}
+
+\let\oldsubsubsection\subsubsection
+\renewcommand{\subsubsection}{%
+  \maybePageBreak{3}%
+  \oldsubsubsection
+}
+% ====================================================
+
+% 目录样式
 \usepackage{tocloft}
 \cftsetindents{subsection}{1.5em}{3em}
 \cftsetindents{subsubsection}{3em}{4em}
@@ -119,13 +177,59 @@
 \author{{PLACEHOLDER:AUTHOR}}
 \date{\today}
 
+% 减少 Overfull 警告
+\sloppy
+\emergencystretch 3em
+
 \begin{document}
 
-% 封面内容
+% 封面
 \maketitle
 {
   \hypersetup{linkcolor=black}
   \tableofcontents
 }
+
+\newpage
+\section*{阅读须知}
+\addcontentsline{toc}{section}{阅读须知}
+
+\begin{spacing}{1.2}
+\setlength{\parskip}{0.8\baselineskip}
+
+小心地分析清零带来的影响，宁愿多清不能漏网，而且这种问题一般很难检查和拍出来。
+
+善用宏可以有效避免重名问题。
+
+\subsection*{应查找的内容}
+\begin{itemize}
+    \item 整数溢出、数组边界
+    \item 特殊情况（n=1? A=0?）
+    \item 做一些事情，而不是什么都不做，保持条理性
+    \item 写点什么东西
+    \item 不要拘泥于一种方法
+\end{itemize}
+
+如果队伍中存在 2 位可以独立读题的同学，建议一人正序从第一题开始看，一人逆序从最后一题开始看，看不懂英文的同学可以帮助团队先打开编译器、敲好头文件、做好准备工作。前期可以同时开两题，水题和签到题的 AC 速度就是优势，需要尽快建立。
+
+某题出现很多人提交错误，但是看起来又比较简单的题，一定要再仔细想一想此题是否有坑。
+
+一道题过的人数就说明了一道题的难易程度，如果一道你认为思维复杂度不高的题过的人数很少那一定是你想简单了。
+
+由于本科组的同学过题速度比较快，可以选择跟本科组同学的榜单（优先选择本科组同学过题较多的题目）。切忌不要跟中学生的榜单，例如学军中学、杭州二中、镇海中学等，他们的学习方法与大学生不一样，他们会的我们不一定会。
+
+如果其他专科组队伍短时间内过的题，而自己队伍想出来的解法实现较困难或者写代码的时间较长，则一定是没有考虑到更加方便的正解（往往这类题目涉及到数学、思维），请再仔细想一想更加简单的写法。
+
+比赛封榜后，如果全场过题数 >= 200 的题目，一定是简单题， >= 100 的题目，一定是可以做的题目。
+
+封榜这一个小时，就是逆风翻盘的最好时机，这最后一个小时内罚时不重要了。
+
+提交结果是 TLE 的话，考虑是否使用了容器操作。例如 vector, map 等，如果使用 map 且没有排序需求的情况下，可以考虑替换为 unordered\_map，如果是 vector，可以考虑替换为数组，检查是否有赘余代码，开大空间，可能是部分越界。
+
+各种数据无限对，但是一直 WA，检查一遍初始化。
+
+输出的答案中包括类似 Case，Yes，No 等英文单词以及句子的时候，一定要复制粘贴，自己手打容易出错产生罚时。还要注意看清楚标点符号。
+
+\end{spacing}
 
 \newpage

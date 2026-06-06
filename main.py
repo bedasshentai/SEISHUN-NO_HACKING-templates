@@ -3,6 +3,9 @@ import re
 import os
 import yaml
 import argparse
+import sys
+import io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 
 def escape_latex_special_chars(text):
@@ -88,11 +91,14 @@ def generate_latex_for_item(directory, item, depth):
     else:
         raise ValueError(f"目录 {directory} 配置过深")
 
+    has_content = False  # 标记是否添加了任何内容
+
     # 处理 code-pre
     if "code-pre" in item:
         file_path = posixpath.join(directory, item["code-pre"])
         contents = read_file(file_path)
         latex_parts.append(contents + "\n")
+        has_content = True
 
     # 处理 codes (支持字符串或数组)
     if "codes" in item:
@@ -121,12 +127,18 @@ def generate_latex_for_item(directory, item, depth):
                 latex_parts.append(
                     f"\\lstinputlisting{{{file_path}}}\n"
                 )
+            has_content = True
 
     # 处理 code-post
     if "code-post" in item:
         file_path = posixpath.join(directory, item["code-post"])
         contents = read_file(file_path)
         latex_parts.append(contents + "\n")
+        has_content = True
+
+    # 如果该条目有实际内容，则在末尾添加分页符
+    if has_content:
+        latex_parts.append("\\newpage\n")
 
     return "\n".join(latex_parts)
 

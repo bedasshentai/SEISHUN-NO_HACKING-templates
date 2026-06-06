@@ -1,0 +1,10 @@
+由于 $e^{A(x)} = B(x) \Leftrightarrow A(x) = \ln B(x) \Leftrightarrow \ln B(x) - A(x) = 0$。
+
+根据牛顿迭代法 $F(B(x)) = \ln B(x) - A(x)$，$F'(B(x)) = \frac{1}{B(x)}$，则有
+\[
+B(x) = B_*(x) - \frac{F(B_*(x))}{F'(B_*(x))} = B_*(x)\bigl(1 - \ln B_*(x) + A(x)\bigr).
+\]
+
+必须保证 $A[0] = 0$，则 $B[0] = 1$，否则常数项为无穷级数。
+
+注意，$\ln B_*(x)$ 的精度需要扩展到 $x^n$。

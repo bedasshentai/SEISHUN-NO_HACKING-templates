@@ -1,0 +1,35 @@
+已知 $G(F(x)) = 0$，$G(x)$ 的系数已知，求 $F(x)$。
+
+考虑倍增，若我们已知 $F_*(x)$ 使得 $G(F_*(x)) \equiv 0 \pmod{x^{\frac{n}{2}}}$，想要求得 $G(F(x)) \equiv 0 \pmod{x^n}$ 的下一组解，我们将 $G(F(x))$ 在 $F_*(x)$ 处泰勒展开：
+\[
+G(F(x)) = G(F_*(x)) + \frac{G'(F_*(x))}{1!}\bigl(F(x) - F_*(x)\bigr) + \frac{G''(F_*(x))}{2!}\bigl(F(x) - F_*(x)\bigr)^2 + \cdots
+\]
+由于 $F_n(x)$ 与 $F_{\frac{n}{2}}(x)$ 前 $\frac{n}{2}$ 项相同，因此 $\bigl(F_n(x) - F_{\frac{n}{2}}(x)\bigr)^2$ 至少是 $n$ 次项的，在模 $x^n$ 意义下等于 $0$，于是
+\[
+G(F(x)) \equiv G(F_*(x)) + \frac{G'\bigl(F_*(x)\bigr)}{1!}\bigl(F(x) - F_*(x)\bigr) \pmod{x^n}
+\]
+那么
+\[
+F(x) \equiv F_*(x) - \frac{G\bigl(F_*(x)\bigr)}{G'\bigl(F_*(x)\bigr)} \pmod{x^n}
+\]
+其中 $G'\bigl(F_*(x)\bigr)$ 的精度达到 $\frac{n}{2}$ 就可以了，因为 $G\bigl(F_*(x)\bigr)$ 的前 $\frac{n}{2}$ 项都为 $0$。
+
+这里的 $G(x)$ 通常都是好算的，并且我们通常把 $G$ 当做常量。
+
+\vspace{2ex}
+\noindent\rule{\linewidth}{0.4pt}
+\vspace{2ex}
+
+- \textbf{多项式求逆的另一种思路}
+
+考虑 $A(x)B(x) \equiv 1 \pmod{x^n}$，$A(x)$ 已知，考虑转换其形式为 $A(x)B(x) - 1 \equiv 0 \pmod{x^n}$。
+
+设多项式 $G(B(x)) = A(x)B(x) - 1$ 在 $B(x)$ 处的取值为 $0$，那么 $G'(B(x)) = A(x)$，这里我们把 $A(x)$ 看作常量，$B(x)$ 看作主元，利用牛顿迭代公式，我们可以得到
+\[
+B(x) \equiv B_*(x) - \frac{G\bigl(B_*(x)\bigr)}{G'\bigl(B_*(x)\bigr)} \equiv B_*(x) - \frac{A(x)B_*(x) - 1}{A(x)} \pmod{x^n}
+\]
+实际上就是 $B(x) \equiv B_*(x) - B(x)\bigl(A(x)B_*(x) - 1\bigr) \pmod{x^n}$，需要注意到 $A(x)B_*(x)$ 前 $\frac{n}{2}$ 项为 $1$，这决定了 $\bigl(A(x)B_*(x) - 1\bigr)$ 最低项是 $x^{\frac{n}{2}}$，所以 $B(x)$ 的精度为 $x^{\frac{n}{2}}$，因此
+\[
+B(x) \equiv 2B_*(x) - B_*(x)^2A(x) \pmod{x^n}
+\]
+这和我们直接推导的公式是一致的。

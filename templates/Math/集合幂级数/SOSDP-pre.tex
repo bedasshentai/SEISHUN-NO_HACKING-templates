@@ -1,0 +1,34 @@
+\subsubsubsection{从一维，二维到高维}
+
+\subsubsubsection{一维前缀和}
+设有数组 $a[1..n]$，其前缀和定义为：
+\[
+s[i] = s[i-1] + a[i] \quad (s[0]=0)
+\]
+时间复杂度 $O(n)$。
+
+\subsubsubsection{二维前缀和}
+基于容斥原理，二维前缀和的递推式为：
+\[
+s[i][j] = s[i-1][j] + s[i][j-1] - s[i-1][j-1] + a[i][j]
+\]
+直接计算每个位置的时间复杂度为 $O(n^2)$（其中 $n$ 为边长）。当维度 $d$ 增大时，容斥原理涉及的项数以 $2^d$ 指数增长，朴素复杂度达到 $O(2^d \cdot n^d)$。
+
+为优化，考虑逐维前缀和（高维前缀和）：
+每次只考虑一个维度，固定所有其它维度，对该维度做一维前缀和。这样对所有 $d$ 个维度分别求和之后，得到 $d$ 维前缀和。时间复杂度为 $O(d \cdot n^d)$。
+
+\subsubsubsection{高维前缀和的一般形式}
+对于 $d$ 维数组 $A[x_1][x_2]...[x_d]$，逐维累加：
+\[
+\text{for each dimension } k \in [1..d]:
+\quad \text{for all } x_1,...,x_d \text{ in increasing order: } 
+A[...][x_k] \mathrel{+}= A[...][x_k-1]
+\]
+最终 $A$ 中的每个位置即为高维前缀和。
+
+\subsubsubsection{子集和问题（Sum over Subset）}
+
+子集和定义为：对每个子集 $S$，求 $f[S] = \sum_{T \subseteq S} g[T]$。  
+子集包含关系与高维前缀和中下标大小关系等价：将子集用二进制数表示后，“$T \subseteq S$” 等价于在每一维上 $T$ 的对应位 $\le S$ 的对应位。因此可以将子集状压后，对每个维度（即每个二进制位）做一次“前缀和”操作。
+
+时间复杂度 $O(n \cdot 2^n)$。
