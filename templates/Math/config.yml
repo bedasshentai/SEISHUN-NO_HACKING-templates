@@ -16,3 +16,20 @@
   - name: Powerful Number筛
     code-pre: PN-pre.tex
     codes: PN.cpp
+  - name: 类欧几里得算法
+    code-pre: 类欧.tex
+    codes: 类欧.cpp
+  - name: 本原毕达哥拉斯三元组
+    code-pre: 本原毕达哥拉斯三元组.tex
+    codes: 本原毕达哥拉斯三元组.cpp
+  - name: 快速乘
+    codes: 快速乘.cpp
+  - name: 龟速乘
+    codes: 龟速乘.cpp
+  - name: EXGCD
+    codes: EXGCD.cpp
+  - name: EXCRT
+    codes: EXCRT.cpp
+  - name: Miller-Rabin
+    code-pre: Miller-Rabin.tex
+    codes: Miller-Rabin.cpp

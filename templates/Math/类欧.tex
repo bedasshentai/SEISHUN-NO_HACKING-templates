@@ -1,0 +1,24 @@
+当 $a \le c$ 且 $b \le c$ 时，有：
+\[
+\begin{aligned}
+f(a,b,c,n) &= n m - f(c,\,c-b-1,\,a,\,m-1),\\[2mm]
+g(a,b,c,n) &= (m+1)mn - 2h(c,\,c-b-1,\,a,\,m-1) - 2f(c,\,c-b-1,\,a,\,m-1) - f(a,b,c,n),\\[2mm]
+h(a,b,c,n) &= \frac{1}{2}\Bigl(mn(m+1) - g(c,\,c-b-1,\,a,\,m-1) - f(c,\,c-b-1,\,a,\,m-1)\Bigr),
+\end{aligned}
+\]
+其中 $m = \left\lfloor \dfrac{an+b}{c} \right\rfloor$。
+
+当 $a \ge c$ 或 $b \ge c$ 时，令 $a' = a \bmod c,\; b' = b \bmod c$，则：
+\[
+\begin{aligned}
+f(a,b,c,n) &= \sum_{i=0}^n \left\lfloor\frac{ai+b}{c}\right\rfloor \\
+&= f(a',b',c,n) + \frac{n(n+1)}{2}\Bigl\lfloor\frac{a}{c}\Bigr\rfloor + (n+1)\Bigl\lfloor\frac{b}{c}\Bigr\rfloor,\\[2mm]
+g(a,b,c,n) &= \sum_{i=0}^n \left\lfloor\frac{ai+b}{c}\right\rfloor^{\!2} \\
+&= g(a',b',c,n) + \frac{n(n+1)(2n+1)}{6}\Bigl\lfloor\frac{a}{c}\Bigr\rfloor^{\!2} + (n+1)\Bigl\lfloor\frac{b}{c}\Bigr\rfloor^{\!2} \\
+&\quad + 2\Bigl( h(a',b',c,n) + \Bigl\lfloor\frac{b}{c}\Bigr\rfloor f(a',b',c,n) + \frac{n(n+1)}{2}\Bigl\lfloor\frac{a}{c}\Bigr\rfloor\Bigl\lfloor\frac{b}{c}\Bigr\rfloor \Bigr),\\[2mm]
+h(a,b,c,n) &= \sum_{i=0}^n i\left\lfloor\frac{ai+b}{c}\right\rfloor \\
+&= h(a',b',c,n) + \frac{n(n+1)(2n+1)}{6}\Bigl\lfloor\frac{a}{c}\Bigr\rfloor + \frac{n(n+1)}{2}\Bigl\lfloor\frac{b}{c}\Bigr\rfloor.
+\end{aligned}
+\]
+
+根据上述公式，使用结构体同步计算三个函数的值，并利用记忆化避免重复计算。
