@@ -1,0 +1,125 @@
+首先，Farey 数列 $F_n$ 表示分母不超过 $n$ 的所有既约真分数按大小顺序排列的集合，形式化来说
+\[
+F_n = \left\{\frac{p}{q} \;\bigg|\; 0 < p < q \le n,\ \gcd(p, q) = 1\right\}
+\]
+这个数列的渐近大小为 $\sum\limits_{i = 1}^{n} \varphi(i) \sim \frac{3}{\pi^2}n^2 + O(n \log n)$。
+
+关于 Farey 数列，有两个经典结论：
+\begin{itemize}
+    \item 若 $\dfrac{a}{b}$ 和 $\dfrac{c}{d}$ 是 $F_n$ 中的两个连续元素，那么 $\dfrac{a + c}{b + d}$ 也是一个合法的 Farey 数。
+    \item 若 $\dfrac{a}{b}$ 和 $\dfrac{c}{d}$ 是 $F_n$ 中的两个连续元素，那么它们的下一个元素 $\dfrac{p}{q}$ 满足
+    \[
+    \begin{cases}
+        p = \left\lfloor\dfrac{n + b}{d}\right\rfloor c - a \\[2mm]
+        q = \left\lfloor\dfrac{n + b}{d}\right\rfloor d - b
+    \end{cases}
+    \]
+\end{itemize}
+
+我们只对上述定理二进行证明。对 $n$ 阶 Farey 数列，相邻两项 $\dfrac{a}{b} < \dfrac{c}{d}$ 满足 $bc - ad = 1$。根据相邻两项 $\dfrac{a}{b},\ \dfrac{c}{d}$ 均在 Stern–Brocot 树上，我们有下一项 $\dfrac{p}{q}$ 满足 $\dfrac{c}{d} = \dfrac{a + p}{b + q}$，也就是 $(p + a)d = (q + b)c$，因此存在 $k$ 使得
+\[
+\begin{cases}
+    kc = a + p \\[1mm]
+    kd = b + q
+\end{cases}
+\]
+为了使 $p,\ q$ 尽可能大，那么 $k$ 的值应该尽可能大，所以对上界 $n$ 来说，$p,\ q$ 由下式定义：
+\[
+\begin{cases}
+    p = kc - a \le n \\[1mm]
+    q = kd - b \le n
+\end{cases}
+\]
+显然由真分数定义知 $q > p$，所以最大 $k = \left\lfloor\dfrac{n + b}{d}\right\rfloor$，因此
+\[
+\begin{cases}
+    p = \left\lfloor\dfrac{n + b}{d}\right\rfloor c - a \\[2mm]
+    q = \left\lfloor\dfrac{n + b}{d}\right\rfloor d - b
+\end{cases}
+\]
+
+生成这个数列有两种计算方式，一是基于第一个定理的 Stern–Brocot 树，这个很好实现。
+\begin{lstlisting}[language=C++, basicstyle=\ttfamily\small, breaklines=true]
+int build(int a, int b, int c, int d, int n) {
+    if (b + d > n) return 0;
+    return 1 + build(a, b, a + c, b + d, n) + build(a + c, b + d, c, d, n);
+}
+\end{lstlisting}
+另一种是基于第二个定理的递推，也比较好写。
+\begin{lstlisting}[language=C++, basicstyle=\ttfamily\small, breaklines=true]
+PII nxt_fraction(PII fac1, PII fac2) {
+    auto [a, b] = fac1;
+    auto [c, d] = fac2;
+    return {(n + b) / d * c - a, (n + b) / d * d - b};
+}
+\end{lstlisting}
+很显然，它们都是 $O(n^2)$ 的时间复杂度进行 Farey 数列特定元素的计算。
+
+为了方便我们解决母问题，我们给出这样两个问题：
+\begin{quote}
+    \textbf{问题一}：给定 $n,\ k$，求 $F_n$ 的第 $k$ 项。\\
+    \textbf{问题二}：给定 $n$ 和既约真分数 $\dfrac{p}{q}\ (p \le n)$，判断其在 $F_n$ 中的排名。
+\end{quote}
+
+我们先考虑第一个问题，我们发现第一个问题可以通过如下步骤进行：
+\begin{itemize}
+    \item 二分 $\dfrac{j}{n}$ 中的 $j$，计算 $\operatorname{rank}\!\left(\dfrac{j}{n}\right)$。
+    \begin{itemize}
+        \item 记 $r = \operatorname{rank}\!\left(\dfrac{j}{n}\right)$，如果 $r < k$，向上搜索，否则向下搜索。
+    \end{itemize}
+    \item 找到一个区间 $\left[\dfrac{j}{n},\ \dfrac{j+1}{n}\right)$ 使得目标分数在这个范围以内。
+    \item 统计这个区间内的分数，找到合法的分数使得其排名为所给 $k$。
+    \begin{itemize}
+        \item 注意到这个区间内不同分母的分数至多一个，因为 $\dfrac{1}{n}$ 是最小间距了。
+        \item 对于一个分母为 $q$ 的分数，唯一可能的分数的分母只能是 $\left\lfloor\dfrac{(j+1)q-1}{n}\right\rfloor$。
+    \end{itemize}
+    \item 找到严格大于 $\dfrac{j}{n}$ 的最小分数 $\dfrac{p}{q}$，利用结论二进行递推，直到给定分数排名为 $k$。
+\end{itemize}
+我们可以看出，问题一可以转化为问题二实现，因此我们现在来考虑问题二如何完成。
+
+更平凡的，问题二可以规约为如下问题：
+\begin{quote}
+    \textbf{子问题}：给定实数 $x$，求分母 $q \le n$ 的既约真分数 $\dfrac{p}{q} \le x$ 的个数。
+\end{quote}
+记 $A_q$ 表示以 $q$ 为分母满足上述条件的既约真分数的个数，显然原问题即求集合
+\[
+S = \left\{\frac{p}{q} \;\bigg|\; \frac{p}{q} \le x,\ q \le n,\ \gcd(p,q)=1\right\}
+\]
+也就是求 $\displaystyle\sum_{i=1}^{n} A_i = |S|$。而我们知道
+\[
+\lfloor x \cdot q \rfloor = \sum_{d\mid q} A_d
+\]
+这告诉我们
+\[
+A_q = \lfloor x \cdot q \rfloor - \sum_{\substack{d\mid q \\ d < q}} A_d
+\]
+按顺序从小到大递推即可，每次计算复杂度 $O(n\log n)$，那么问题一的复杂度就是 $O(n\log^2 n)$。有没有更优的做法呢？
+
+考虑 $A_q$ 的本质形态，利用莫比乌斯反演，我们可以得到
+\[
+A_q = \sum_{i=1}^{\lfloor x q \rfloor} [\gcd(i,q)=1] = \sum_{i=1}^{\lfloor x q \rfloor} \sum_{d\mid \gcd(i,q)} \mu(d)
+\]
+如果我们对所有 $A_q$ 求和，那么就有
+\[
+\begin{aligned}
+|S| &= \sum_{i=1}^{n} A_i \\
+    &= \sum_{i=1}^{n} \sum_{j=1}^{\lfloor x i \rfloor} [\gcd(i,j)=1] \\
+    &= \sum_{i=1}^{n} \sum_{j=1}^{\lfloor x i \rfloor} \sum_{d\mid \gcd(i,j)} \mu(d) \\
+    &= \sum_{d=1}^{n} \mu(d) \sum_{i=1}^{\lfloor n/d \rfloor} \sum_{j=1}^{\lfloor x i \rfloor} 1 \\
+    &= \sum_{d=1}^{n} \mu(d) \sum_{i=1}^{\lfloor n/d \rfloor} \lfloor x i \rfloor
+\end{aligned}
+\]
+设 $S(n) = \sum_{i=1}^{n} \lfloor x i \rfloor$，那么我们要求的就是
+\[
+\sum_{d=1}^{n} \mu(d)\, S\!\left(\left\lfloor\frac{n}{d}\right\rfloor\right)
+\]
+对 $\lfloor x i \rfloor$ 求前缀和，预处理莫比乌斯函数，我们可以在 $O(n)$ 时间复杂度解决这个问题。
+
+如此，我们在解决 Farey 数列问题上我们有：
+\begin{itemize}
+    \item 预处理：$O(n)$
+    \item 给 $\operatorname{rank}$ 求分数：$O(n\log n)$
+    \item 给分数求 $\operatorname{rank}$：$O(n)$
+    \item 求 $F_n$ 中比某实数小的数的个数：$O(n)$
+    \item 正实数的有理逼近：$O(n\log n)$
+\end{itemize}

@@ -33,3 +33,9 @@
   - name: Miller-Rabin
     code-pre: Miller-Rabin.tex
     codes: Miller-Rabin.cpp
+  - name: Faray 数列
+    code-pre: Faray.tex
+    codes: Faray.cpp
+  - name: 亚线性 Faray 数列
+    code-pre: Faray-master.tex
+    codes: Faray-master.cpp
