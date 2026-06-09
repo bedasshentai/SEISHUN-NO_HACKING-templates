@@ -1,0 +1,10 @@
+扩展欧拉定理解决了任意模数下任意底数的幂次计算问题，将它们转化为指数小于 $2\varphi(m)$ 的情形，从而可以通过快速幂在 $O(\log\varphi(m))$ 时间内计算．
+
+\[
+a^k \equiv 
+\begin{cases}
+a^{k \bmod \varphi(m)}, & \gcd(a,m)=1, \\[4pt]
+a^k, & \gcd(a,m) \neq 1,\ k < \varphi(m), \\[4pt]
+a^{(k \bmod \varphi(m)) + \varphi(m)}, & \gcd(a,m) \neq 1,\ k \ge \varphi(m).
+\end{cases}
+\]

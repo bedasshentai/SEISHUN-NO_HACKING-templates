@@ -7,9 +7,6 @@
     directory: 集合幂级数
   - name: 多项式
     directory: 多项式
-  - name: 狄利克雷卷积
-    codes: 
-    code-pre: 狄利克雷卷积.tex
   - name: 数论筛法
     directory: 数论筛法
   - name: 类欧几里得算法

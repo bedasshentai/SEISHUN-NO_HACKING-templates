@@ -1,4 +1,7 @@
 contents:
+  - name: 扩展欧拉定理
+    codes: 
+    code-pre: 扩展欧拉定理.tex
   - name: 数论分块
     codes: 数论分块.cpp
     code-pre: 数论分块.tex
@@ -9,3 +12,6 @@ contents:
   - name: Miller-Rabin
     code-pre: Miller-Rabin.tex
     codes: Miller-Rabin.cpp
+  - name: 狄利克雷卷积
+    codes: 
+    code-pre: 狄利克雷卷积.tex

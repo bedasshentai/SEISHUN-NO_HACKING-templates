@@ -1,4 +1,7 @@
 ﻿contents:
+  - name: 麦克劳林级数
+    codes: 
+    code-pre: 麦克劳林级数.tex
   - name: FFT
     codes: FFT.cpp
     code-pre: FFT-pre.tex
