@@ -1,0 +1,23 @@
+在 $n!$ 的唯一分解中，对于质数 $p$，记 $L_p(n!)$ 为素数 $p$ 的最高指数，这里的 $L_p(n!)$ 为勒让德函数。
+
+\textbf{勒让德定理}：
+\[
+L_p(n!) = \sum_{k \ge 1}\left\lfloor\frac{n}{p^k}\right\rfloor
+\]
+
+\textbf{证明}：
+记 $N_p(n!, k)$ 表示 $[1, n!]$ 中唯一分解后素数 $p$ 的幂为 $k$ 的数个数。
+
+易知 $L_p(n!) = N_p(n!, 1) + 2N_p(n!, 2) + \cdots + rN_p(n!, r)$。
+
+而对于 $[1, n]$ 中能被 $p$ 整除的数有 $\left\lfloor\frac{n}{p}\right\rfloor$ 个，即 $N_p(n!, 1) + N_p(n!, 2) + \cdots + N_p(n!, r)$ 个。
+
+对于 $[1, n]$ 中能被 $p^k$ 整除的数有 $\left\lfloor\frac{n}{p^k}\right\rfloor$ 个，即 $N_p(n!, k) + N_p(n!, k+1) + \cdots + N_p(n!, r)$ 个。
+
+综上可知：
+\[
+\begin{aligned}
+L_p(n!) &= N_p(n!, 1) + 2N_p(n!, 2) + \cdots + rN_p(n!, r)\\
+&= \sum_{k \ge 1}\left\lfloor\frac{n}{p^k}\right\rfloor
+\end{aligned}
+\]

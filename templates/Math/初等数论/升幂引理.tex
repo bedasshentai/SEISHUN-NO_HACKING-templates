@@ -1,0 +1,53 @@
+记 $\nu_p(n)$ 表示 $n$ 的标准分解中素数 $p$ 的幂次，即 $p^{\nu_p(n)} \parallel n$。
+
+该引理分为两部分：设 $a,\,b$ 为不等正整数且 $p \mid a - b$，$(p,\,ab)=1$，
+
+\begin{itemize}
+\item 若 $p$ 为奇素数，则 $\nu_p(a^n - b^n) = \nu_p(a - b) + \nu_p(n)$；
+\item 若 $p = 2$，则 $\nu_2(a^n - b^n) = \nu_2(a^2 - b^2) + \nu_2(n) - 1$。
+\end{itemize}
+
+\begin{proof}
+\begin{itemize}
+\item 若 $p$ 为奇素数，设 $c = a - b$，则
+\[
+a^n - b^n = \sum_{i=1}^{n} \binom{n}{i} b^{n-i} c^i,
+\]
+讨论 $p$ 在和式中的幂次：
+\begin{itemize}
+\item 当 $k = 1$ 时，$\nu_p(n b^{n-1}c) = \nu_p(a - b) + \nu_p(n)$；
+\item 当 $k > 1$ 时，
+\[
+\begin{aligned}
+\nu_p\!\left(\binom{n}{k}b^{n-k}c^k\right)
+&= \nu_p\!\left(\frac{n}{k}\binom{n-1}{k-1}b^{n-k}c^k\right) \\
+&= \nu_p\!\left(\frac{n}{k}\right) + \nu_p\!\left(\binom{n-1}{k-1}b^{n-k}c^k\right) \\
+&\ge k\nu_p(a - b) + \nu_p(n) - \nu_p(k).
+\end{aligned}
+\]
+而因为 $\nu_p(a - b) \ge 1$，考虑证明 $k-1 > \nu_p(k)$，由 $k>2,\ p>1$ 知 $k-1 > \log_p k \ge \nu_p(k)$，因此
+\[
+k\nu_p(a-b)+\nu_p(n)-\nu_p(k) > \nu_p(a-b)+\nu_p(n),
+\]
+故 $\nu_p(a^n - b^n) = \nu_p(a - b) + \nu_p(n)$。
+\end{itemize}
+
+\item 若 $p = 2$，我们对 $n$ 进行分讨：
+\begin{itemize}
+\item 当 $n$ 为奇数时，同上证法可知 $\nu_2(a^n - b^n) = \nu_2(a - b)$。
+\item 当 $n$ 为偶数时，设 $n = 2^t s$，其中 $s$ 为奇数，可对 $a^n - b^n$ 做因式分解：
+\[
+a^n - b^n = (a^s - b^s)(a^s + b^s)(a^{2s} + b^{2s})\cdots(a^{2^{t-1}s} + b^{2^{t-1}s}).
+\]
+注意到，若 $x,y$ 均为奇数，则 $x^2 + y^2 \equiv 2 \pmod{4}$，也即 $\nu_2(x^2 + y^2) = 1$。
+由 $\nu_2(a^n - b^n) = \nu_2(a - b)$ 可推导出 $\nu_2(a^n + b^n) = \nu_2(a + b)$，故原式等价于：
+\[
+\begin{aligned}
+\nu_2(a^n - b^n) &= \nu_2(a^s - b^s) + \nu_2(a^s + b^s) + \cdots + \nu_2(a^{2^{t-1}s} + b^{2^{t-1}s}) \\
+&= \nu_2(a - b) + \nu_2(a + b) + t - 1 \\
+&= \nu_2(a^2 - b^2) + \nu_2(n) - 1.
+\end{aligned}
+\]
+\end{itemize}
+\end{itemize}
+\end{proof}
