@@ -1,8 +1,0 @@
-contents:
-  - name: 杜教筛
-    code-pre: 杜教筛.tex
-    codes: 杜教筛.cpp
-    code-post: 杜教筛-post.tex
-  - name: Powerful Number筛
-    code-pre: PN-pre.tex
-    codes: PN.cpp

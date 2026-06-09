@@ -1,14 +1,12 @@
 ﻿contents:
-  - name: 初等数论
-    directory: 初等数论
+  - name: 数论
+    directory: 数论
   - name: 组合数学
     directory: 组合数学
   - name: 集合幂级数
     directory: 集合幂级数
   - name: 多项式
     directory: 多项式
-  - name: 数论筛法
-    directory: 数论筛法
   - name: 类欧几里得算法
     code-pre: 类欧.tex
     codes: 类欧.cpp
