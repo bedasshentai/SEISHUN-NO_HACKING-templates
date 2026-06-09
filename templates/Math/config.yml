@@ -1,4 +1,6 @@
 ﻿contents:
+  - name: 组合数学
+    directory: 组合数学
   - name: 集合幂级数
     directory: 集合幂级数
   - name: 多项式

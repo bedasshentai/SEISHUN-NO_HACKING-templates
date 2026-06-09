@@ -1,0 +1,87 @@
+\section{二项式系数恒等式}
+
+阶乘公式能联系相邻的二项式系数，例如在 $k$ 是正整数时，对任意 $n$ 有：
+\[
+\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}
+\]
+\[
+\binom{n}{k} = \frac{n}{k} \binom{n-1}{k-1}
+\]
+\[
+\binom{n-1}{k} - \binom{n-1}{k-1} = \frac{n-2k}{n} \binom{n}{k}
+\]
+
+两个组合数相乘可作变换：
+\[
+\binom{n}{i} \binom{i}{m} = \binom{n}{m} \binom{n-m}{i-m}
+\]
+\[
+\sum_{r=0}^{n} \binom{n}{r} = 2^n
+\]
+\[
+\sum_{r=0}^{k} \binom{n+r-1}{r} = \binom{n+k}{k}
+\]
+\[
+\sum_{r=0}^{n-k} \frac{(-1)^r (n+1)}{k+r+1} \binom{n-k}{r} = \binom{n}{k}^{-1}
+\]
+\[
+\sum_{r=0}^{n} \binom{dn}{dr} = \frac{1}{d} \sum_{r=1}^{d} (1+e^{\frac{2\pi r i}{d}})^{dn}
+\]
+\[
+\sum_{i=m}^{n} \binom{a+i}{i} = \binom{a+n+1}{n} - \binom{a+m}{m-1}
+\]
+\[
+\binom{a+m}{m-1} + \binom{a+m}{m} + \binom{a+m+1}{m+1} + \dots + \binom{a+n}{n} = \binom{a+n+1}{n}
+\]
+
+斐波那契数与二项式系数的关系：
+\[
+F_n = \sum_{i=0}^{\infty} \binom{n-i}{i}
+\]
+\[
+\begin{aligned}
+F_{n-1} + F_n &= \sum_{i=0}^{\infty} \binom{n-1-i}{i} + \sum_{i=0}^{\infty} \binom{n-i}{i} \\
+&= 1 + \sum_{i=1}^{\infty} \binom{n-i}{i-1} + \sum_{i=1}^{\infty} \binom{n-i}{i} \\
+&= 1 + \sum_{i=1}^{\infty} \binom{n+1-i}{i} = \sum_{i=0}^{\infty} \binom{n+1-i}{i} = F_{n+1}
+\end{aligned}
+\]
+
+\paragraph{主条目：朱世杰恒等式}
+\[
+\sum_{i=m}^{n} \binom{i}{a} = \binom{n+1}{a+1} - \binom{m}{a+1}
+\]
+\[
+\binom{m}{a+1} + \binom{m}{a} + \binom{m+1}{a} + \dots + \binom{n}{a} = \binom{n+1}{a+1}
+\]
+
+\paragraph{二阶求和公式}
+\[
+\sum_{r=0}^{n} \binom{n}{r}^2 = \binom{2n}{n}
+\]
+\[
+\sum_{i=0}^{n} \binom{r_1+n-1-i}{r_1-1} \binom{r_2+i-1}{r_2-1} = \binom{r_1+r_2+n-1}{r_1+r_2-1}
+\]
+利用生成函数：
+\[
+(1-x)^{-r_1} (1-x)^{-r_2} = (1-x)^{-r_1-r_2}
+\]
+左边展开：
+\[
+(1-x)^{-r_1} (1-x)^{-r_2} = \left( \sum_{n=0}^{\infty} \binom{r_1+n-1}{r_1-1} x^n \right) \left( \sum_{n=0}^{\infty} \binom{r_2+n-1}{r_2-1} x^n \right) = \sum_{n=0}^{\infty} \sum_{i=0}^{n} \binom{r_1+n-1-i}{r_1-1} \binom{r_2+i-1}{r_2-1} x^n
+\]
+右边展开：
+\[
+(1-x)^{-r_1-r_2} = \sum_{n=0}^{\infty} \binom{r_1+r_2+n-1}{r_1+r_2-1} x^n
+\]
+比较系数即得恒等式。
+
+\paragraph{主条目：范德蒙恒等式}
+\[
+\sum_{i=0}^{k} \binom{n}{i} \binom{m}{k-i} = \binom{n+m}{k}
+\]
+
+\paragraph{三阶求和公式}
+主条目：李善兰恒等式
+\[
+\binom{n+k}{k}^2 = \sum_{j=0}^{k} \binom{k}{j}^2 \binom{n+2k-j}{2k}
+\]

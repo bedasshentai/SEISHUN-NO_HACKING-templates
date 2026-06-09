@@ -1,0 +1,10 @@
+﻿contents:
+  - name: 组合数定理
+    codes: 
+    code-pre: 组合数定理.tex
+  - name: 卡特兰数
+    codes:
+    code-pre: 卡特兰数.tex
+  - name: 二项式反演
+    codes: 
+    code-pre: 二项式反演.tex
