@@ -1,0 +1,31 @@
+\begin{proof}
+
+\textbf{存在性：}已知质数 $p = 4k + 1$，考虑所有满足 $x^2 + 4yz = p$ 的自然数组 $(x, y, z)$ 构成的有限集合 $S$。在 $S$ 上存在两组对合映射：
+
+\begin{enumerate}
+\item $(x, y, z) \mapsto (x, z, y)$
+\item $(x, y, z) \mapsto 
+\begin{cases}(x + 2z,\, z,\, y - x - z), & \text{若} \quad x < y - z \\[4pt]
+(2y - x,\, y,\, x - y + z), & \text{若} \quad y - z < x < 2y \\[4pt]
+(x - 2y,\, x - y + z,\, y), & \text{若} \quad 2y < x\end{cases}$
+\end{enumerate}
+
+首先 $S$ 是有限集合，因为 $x$ 有限，所对应的 $y, z$ 也有限。上述两种映射都是 $S$ 到 $S$ 的映射，经验算可知两者均为对合映射。由于第二个映射中，$x + 2z > x$ 且 $x - 2y < x$，只有 $2y - x = x$ 可能是不动点，即 $x = y$，代入 $x^2 + 4yz = p$ 得 $x = 1$，因此第二个映射只有一个不动点 $(1, 1, n)$。所以除该点外其余点两两配对，故 $|S|$ 为奇数。
+
+于是第一个映射至少含有一个不动点 $(x, y, y)$（否则 $S$ 中元素将两两配对，与 $|S|$ 为奇数矛盾）。代入原方程得 $x^2 + 4y^2 = p$，存在性得证。
+
+\textbf{唯一性：}假设 $p = 4k + 1$ 有两种不同的分解方式：$p = x^2 + y^2 = m^2 + n^2$。不妨设 $x > n > m > y > 0$。注意到
+\[
+(xn - ym)(xn + ym) = x^2n^2 - y^2m^2 = x^2(n^2 + m^2) - m^2(x^2 + y^2) = p(x^2 - m^2),
+\]
+故 $p \mid (xn - ym)(xn + ym)$。由于 $xn - ym < x^2 < p$，所以 $p \mid xn + ym$。同时
+\[
+(xn + ym)^2 + (xm - yn)^2 = (x^2 + y^2)(n^2 + m^2) = p^2,
+\]
+因此 $p \mid xm - yn$。但 $xm - yn < x^2 < p$，矛盾。故分解唯一。
+
+\textbf{必要性：}若奇素数 $p$ 可表示为 $p = x^2 + y^2$，则模 $4$ 知 $x^2, y^2 \equiv 0$ 或 $1 \pmod 4$，故 $p \equiv 0,1,2 \pmod 4$。由于 $p$ 是奇素数，只能 $p \equiv 1 \pmod 4$。因此 $p \equiv 3 \pmod 4$ 时不能表示为两平方和。
+
+综上，费马平方和定理得证。
+
+\end{proof}

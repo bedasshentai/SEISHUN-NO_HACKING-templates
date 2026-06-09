@@ -11,6 +11,9 @@ contents:
   - name: 升幂引理
     codes:
     code-pre: 升幂引理.tex
+  - name: 费马平方和定理
+    codes:
+    code-pre: 费马平方和定理.tex
   - name: 数论分块
     codes: 数论分块.cpp
     code-pre: 数论分块.tex

@@ -5,7 +5,8 @@
 L_p(n!) = \sum_{k \ge 1}\left\lfloor\frac{n}{p^k}\right\rfloor
 \]
 
-\textbf{证明}：
+\begin{proof}
+
 记 $N_p(n!, k)$ 表示 $[1, n!]$ 中唯一分解后素数 $p$ 的幂为 $k$ 的数个数。
 
 易知 $L_p(n!) = N_p(n!, 1) + 2N_p(n!, 2) + \cdots + rN_p(n!, r)$。
@@ -21,3 +22,5 @@ L_p(n!) &= N_p(n!, 1) + 2N_p(n!, 2) + \cdots + rN_p(n!, r)\\
 &= \sum_{k \ge 1}\left\lfloor\frac{n}{p^k}\right\rfloor
 \end{aligned}
 \]
+
+\end{proof}

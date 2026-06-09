@@ -1,10 +1,10 @@
-\begin{theorem}
+\textbf{定理1：}
 \[
 \gcd(a^m - 1, a^n - 1) = a^{\gcd(m, n)} - 1
 \]
-\end{theorem}
 
 \begin{proof}
+
 根据 $\gcd$ 具有 $\gcd(a, b) = \gcd(a - b, b)$ 的性质，不妨设 $m \ge n$，作差有：
 \[
 \begin{aligned}
@@ -28,16 +28,17 @@
 \[
 \gcd(a^m - 1, a^n - 1) = a^{\gcd(m, n)} - 1
 \]
+
 \end{proof}
 
-\begin{theorem}
+\textbf{定理2：}
 \[
 \gcd(a^m - b^m, a^n - b^n) = a^{\gcd(m, n)} - b^{\gcd(m, n)},
 \]
 其中 $\gcd(a, b) = 1$ 且 $a > b$。
-\end{theorem}
 
 \begin{proof}
+
 根据定理1的类似证明方式，作差后有：
 \[
 \begin{aligned}
@@ -50,9 +51,11 @@
 \end{aligned}
 \]
 由递归定义可得 $\gcd(a^m - b^m, a^n - b^n) = \bigl| a^{\gcd(m, n)} - b^{\gcd(m, n)} \bigr|$。
+
 \end{proof}
 
-\begin{theorem}
+\textbf{定理3：}
+
 设
 \[
 G = \gcd\left(\binom{n}{1}, \binom{n}{2}, \ldots, \binom{n}{n-1}\right).
@@ -61,9 +64,9 @@ G = \gcd\left(\binom{n}{1}, \binom{n}{2}, \ldots, \binom{n}{n-1}\right).
 \item 若 $n = p^k$（$k>0$，$p$ 为素数），则 $G = p$；
 \item 否则 $G = 1$。
 \end{itemize}
-\end{theorem}
 
 \begin{proof}
+
 \begin{itemize}
 \item 当 $n = p^k$ 时，因为 $\binom{n}{i} = \dfrac{n!}{i!\,(n-i)!}$（$1 \le i < n$）。由勒让德定理，对因子 $p$，$p$ 的出现次数为
 \[
@@ -90,17 +93,18 @@ L_{p_0}(n!) = L_{p_0}(i!) + L_{p_0}((n-i)!).
 \]
 因此对每个素数 $p$ 都存在某个 $i$ 使得 $p \nmid \binom{n}{i}$，从而 $G = 1$。
 \end{itemize}
-综上，结论成立。
+
 \end{proof}
 
-\begin{theorem}
+\textbf{定理4：}
+
 若 $F(n)$ 表示斐波那契数列第 $n$ 项，则
 \[
 \gcd(F(n), F(m)) = F(\gcd(n, m)).
 \]
-\end{theorem}
 
 \begin{proof}
+
 先证明恒等式
 \[
 F(n+m) = F(n)F(m+1) + F(n-1)F(m).
@@ -133,15 +137,16 @@ F(n+k) &= F(n)F(k+1) + F(n-1)F(k).
 \[
 \gcd(F(n),F(m)) = \gcd(F(n \bmod m),F(m)) = F(\gcd(n,m)).
 \]
+
 \end{proof}
 
-\begin{theorem}
+\textbf{定理5：}
 \[
 (n+1)\operatorname{lcm}\left(\binom{n}{0}, \binom{n}{1}, \ldots, \binom{n}{n}\right) = \operatorname{lcm}(1,2,\ldots,n+1).
 \]
-\end{theorem}
 
 \begin{proof}
+
 将 $n+1$ 乘进去：
 \[
 \operatorname{lcm}\left((n+1)\binom{n}{0}, (n+1)\binom{n}{1}, \ldots, (n+1)\binom{n}{n}\right) = \operatorname{lcm}(1,2,\ldots,n+1).
@@ -171,4 +176,5 @@ L_p((n+1)!) = L_p((i+1)!)+L_p((n-i)!)=L_p(i!)+L_p((n-i)!)+r+1,
 左边 $p$ 的最高幂为 $p^{r+1}$，右边 $n+1 = p^{r+1}$，等式成立。
 \end{itemize}
 因此两边每个素因子的幂次相同，定理得证。
+
 \end{proof}
