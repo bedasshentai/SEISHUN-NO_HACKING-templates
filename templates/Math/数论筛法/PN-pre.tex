@@ -12,7 +12,7 @@ Powerful Number（以下简称 PN）筛类似于杜教筛，或者说是杜教�
 
 假设现在要求积性函数 $f$ 的前缀和 $F(n) = \sum_{i=1}^{n} f(i)$。
 
-\subsubsection{Powerful Number}
+\subsubsubsection{Powerful Number}
 
 \textbf{定义}：对于正整数 $n$，记 $n$ 的质因数分解为 $n = \prod_{i=1}^{m} p_i^{e_i}$。$n$ 是 PN 当且仅当 $\forall 1 \le i \le m,\ e_i > 1$。
 
@@ -29,7 +29,7 @@ Powerful Number（以下简称 PN）筛类似于杜教筛，或者说是杜教�
 
 那么如何求出 $n$ 以内所有的 PN 呢？线性筛找出 $\sqrt{n}$ 内的所有素数，再 DFS 搜索各素数的指数即可。由于 $n$ 以内的 PN 至多有 $O(\sqrt{n})$ 个，所以至多搜索 $O(\sqrt{n})$ 次。
 
-\subsubsection{PN 筛}
+\subsubsubsection{PN 筛}
 
 首先，构造出一个易求前缀和的积性函数 $g$，且满足对于素数 $p$，$g(p) = f(p)$。记 $G(n) = \sum_{i=1}^{n} g(i)$。
 

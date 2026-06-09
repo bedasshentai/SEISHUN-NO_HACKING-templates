@@ -1,23 +1,17 @@
 ﻿contents:
+  - name: 初等数论
+    directory: 初等数论
   - name: 组合数学
     directory: 组合数学
   - name: 集合幂级数
     directory: 集合幂级数
   - name: 多项式
     directory: 多项式
-  - name: 数论分块
-    codes: 数论分块.cpp
-    code-pre: 数论分块.tex
   - name: 狄利克雷卷积
     codes: 
     code-pre: 狄利克雷卷积.tex
-  - name: 杜教筛
-    code-pre: 杜教筛.tex
-    codes: 杜教筛.cpp
-    code-post: 杜教筛-post.tex
-  - name: Powerful Number筛
-    code-pre: PN-pre.tex
-    codes: PN.cpp
+  - name: 数论筛法
+    directory: 数论筛法
   - name: 类欧几里得算法
     code-pre: 类欧.tex
     codes: 类欧.cpp
@@ -28,13 +22,6 @@
     codes: 快速乘.cpp
   - name: 龟速乘
     codes: 龟速乘.cpp
-  - name: EXGCD
-    codes: EXGCD.cpp
-  - name: EXCRT
-    codes: EXCRT.cpp
-  - name: Miller-Rabin
-    code-pre: Miller-Rabin.tex
-    codes: Miller-Rabin.cpp
   - name: Faray 数列
     code-pre: Faray.tex
     codes: Faray.cpp

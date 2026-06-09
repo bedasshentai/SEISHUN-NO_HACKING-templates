@@ -1,0 +1,11 @@
+contents:
+  - name: 数论分块
+    codes: 数论分块.cpp
+    code-pre: 数论分块.tex
+  - name: EXGCD
+    codes: EXGCD.cpp
+  - name: EXCRT
+    codes: EXCRT.cpp
+  - name: Miller-Rabin
+    code-pre: Miller-Rabin.tex
+    codes: Miller-Rabin.cpp
