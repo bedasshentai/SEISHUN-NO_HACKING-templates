@@ -1,7 +1,7 @@
 ﻿contents:
   - name: 麦克劳林级数
     codes: 
-    code-pre: 麦克劳林级数.tex
+    code-pre: 麦克劳林级数-pre.tex
   - name: FFT
     codes: FFT.cpp
     code-pre: FFT-pre.tex
@@ -10,39 +10,39 @@
     code-pre: NTT-pre.tex
   - name: 多项式求逆
     codes: Poly-inv.cpp
-    code-pre: Poly-inv.tex
+    code-pre: Poly-inv-pre.tex
   - name: 多项式牛顿迭代
     codes:
-    code-pre: Poly-Newton.tex
+    code-pre: Poly-Newton-pre.tex
   - name: 多项式开根
     codes: Poly-sqrt.cpp
-    code-pre: Poly-sqrt.tex
+    code-pre: Poly-sqrt-pre.tex
   - name: 多项式带余除法
     codes: Poly-div.cpp
-    code-pre: Poly-div.tex
+    code-pre: Poly-div-pre.tex
   - name: 多项式积分/求导
     codes: Poly-int.cpp
-    code-pre: Poly-int.tex
+    code-pre: Poly-int-pre.tex
   - name: 多项式求ln
     codes: Poly-ln.cpp
-    code-pre: Poly-ln.tex
+    code-pre: Poly-ln-pre.tex
   - name: 多项式求exp
     codes: Poly-exp.cpp
-    code-pre: Poly-exp.tex
+    code-pre: Poly-exp-pre.tex
   - name: 多项式快速幂(A[0]=1)
     codes: Poly-pow1.cpp
-    code-pre: Poly-pow1.tex
+    code-pre: Poly-pow1-pre.tex
   - name: 多项式快速幂(A[0]!=1)
     codes: Poly-pow2.cpp
-    code-pre: Poly-pow2.tex
+    code-pre: Poly-pow2-pre.tex
   - name: 多项式三角函数
     codes: Poly-triangle.cpp
-    code-pre: Poly-triangle.tex
+    code-pre: Poly-triangle-pre.tex
   - name: MTT
     codes: MTT.cpp
-    code-pre: MTT-pre.tex
+    code-pre: MTT-pre-pre.tex
   - name: 分治FFT
     codes: Poly-cdq.cpp
-    code-pre: Poly-cdq.tex
+    code-pre: Poly-cdq-pre.tex
   - name: 多项式全家桶
     codes: Polynomial.cpp

@@ -18,8 +18,8 @@
   - name: 龟速乘
     codes: 龟速乘.cpp
   - name: Faray 数列
-    code-pre: Faray.tex
+    code-pre: Faray-pre.tex
     codes: Faray.cpp
   - name: 亚线性 Faray 数列
-    code-pre: Faray-master.tex
+    code-pre: Faray-master-pre.tex
     codes: Faray-master.cpp

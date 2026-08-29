@@ -1,36 +1,36 @@
 contents:
   - name: 扩展欧拉定理
     codes: 
-    code-pre: 扩展欧拉定理.tex
+    code-pre: 扩展欧拉定理-pre.tex
   - name: 勒让德定理
     codes:
-    code-pre: 勒让德定理.tex
+    code-pre: 勒让德定理-pre.tex
   - name: GCD 引理
     codes:
-    code-pre: GCD引理.tex
+    code-pre: GCD引理-pre.tex
   - name: 升幂引理
     codes:
-    code-pre: 升幂引理.tex
+    code-pre: 升幂引理-pre.tex
   - name: 费马平方和定理
     codes:
-    code-pre: 费马平方和定理.tex
+    code-pre: 费马平方和定理-pre.tex
   - name: 数论分块
     codes: 数论分块.cpp
-    code-pre: 数论分块.tex
+    code-pre: 数论分块-pre.tex
   - name: EXGCD
     codes: EXGCD.cpp
   - name: EXCRT
     codes: EXCRT.cpp
   - name: Miller-Rabin
-    code-pre: Miller-Rabin.tex
+    code-pre: Miller-Rabin-pre.tex
     codes: Miller-Rabin.cpp
   - name: 狄利克雷卷积
     codes: 
-    code-pre: 狄利克雷卷积.tex
+    code-pre: 狄利克雷卷积-pre.tex
   - name: 杜教筛
-    code-pre: 杜教筛.tex
+    code-pre: 杜教筛-pre.tex
     codes: 杜教筛.cpp
     code-post: 杜教筛-post.tex
-  - name: Powerful Number筛
+  - name: Powerful Number 筛
     code-pre: PN-pre.tex
     codes: PN.cpp
