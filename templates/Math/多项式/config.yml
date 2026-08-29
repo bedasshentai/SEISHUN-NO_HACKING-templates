@@ -40,7 +40,7 @@
     code-pre: Poly-triangle-pre.tex
   - name: MTT
     codes: MTT.cpp
-    code-pre: MTT-pre-pre.tex
+    code-pre: MTT-pre.tex
   - name: 分治FFT
     codes: Poly-cdq.cpp
     code-pre: Poly-cdq-pre.tex

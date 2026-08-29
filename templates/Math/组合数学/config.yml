@@ -8,3 +8,6 @@
   - name: 二项式反演
     codes: 
     code-pre: 二项式反演-pre.tex
+  - name: 斯特林数
+    codes:
+    code-pre: 斯特林数-pre.tex

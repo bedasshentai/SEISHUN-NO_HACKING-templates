@@ -8,10 +8,10 @@
   - name: 多项式
     directory: 多项式
   - name: 类欧几里得算法
-    code-pre: 类欧.tex
+    code-pre: 类欧-pre.tex
     codes: 类欧.cpp
   - name: 本原毕达哥拉斯三元组
-    code-pre: 本原毕达哥拉斯三元组.tex
+    code-pre: 本原毕达哥拉斯三元组-pre.tex
     codes: 本原毕达哥拉斯三元组.cpp
   - name: 快速乘
     codes: 快速乘.cpp
