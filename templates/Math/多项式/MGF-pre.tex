@@ -1,0 +1,17 @@
+原点矩是随机变量 $X$ 的幂次的期望值，通常简称为矩，$n$ 阶矩则是 $E(X^n)$。
+
+矩生成函数是一个无穷多项式，其第 $i$ 次项系数蕴涵了随机变量的 $i$ 阶矩。
+
+设 $P(x)$ 为离散随机变量的概率，$f(x)$ 为连续随机变量的概率密度函数，和指数生成函数类似，设 $t$ 为多项式的主元，矩生成函数被定义为：
+
+$$E[e^{tx}] = \begin{cases}\sum\limits_{x} e^{tx} \cdot P(x), & x \text{ is discrete}\\ \int\limits_{x}e^{tx} \cdot f(x)dx, & x \text{ is continuous}\end{cases}$$
+
+根据麦克劳林公式：
+
+$$e^{tx} = \sum_{i = 0}^{\infty}\dfrac{t^i}{i!}x^i$$
+
+再由期望的线性性可以得知：
+
+$$E[e^{tx}] = E\left[\sum_{i = 0}^{\infty}\dfrac{t^i}{i!}x^i\right] = \sum_{i = 0}^{\infty}\dfrac{t^i}{i!}E\left(x^i\right)$$
+
+不难注意到，欲求 $n$ 阶矩，则相当于对原生成函数求 $n$ 阶导然后令 $t = 0$。

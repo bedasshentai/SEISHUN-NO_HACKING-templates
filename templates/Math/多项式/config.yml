@@ -46,3 +46,5 @@
     code-pre: Poly-cdq-pre.tex
   - name: 多项式全家桶
     codes: Polynomial.cpp
+  - name: 矩生成函数
+    code-pre: MGF-pre.tex
