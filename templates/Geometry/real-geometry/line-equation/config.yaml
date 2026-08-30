@@ -1,0 +1,11 @@
+contents:
+- name: 一般式转两点式
+  codes: general-to-two-point.hpp
+- name: 抛物线与 x 轴交点
+  codes: parabola-x-cross.hpp
+- name: 分数精确斜率
+  codes: slope-frac.hpp
+- name: 浮点斜率
+  codes: slope.hpp
+- name: 两点式转一般式
+  codes: two-point-to-general.hpp

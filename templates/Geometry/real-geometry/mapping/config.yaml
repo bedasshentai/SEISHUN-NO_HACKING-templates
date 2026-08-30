@@ -1,0 +1,11 @@
+contents:
+- name: 单位向量
+  codes: normalize.hpp
+- name: 线段中垂线
+  codes: perpendicular-bisector.hpp
+- name: 投影
+  codes: projection.hpp
+- name: 对称点
+  codes: reflection.hpp
+- name: 向量旋转
+  codes: rotate.hpp

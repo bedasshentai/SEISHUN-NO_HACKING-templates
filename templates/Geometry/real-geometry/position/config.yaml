@@ -1,0 +1,27 @@
+contents:
+- name: 点是否在圆内
+  codes: in-circle.hpp
+- name: 两圆位置关系
+  codes: intersect-cc.hpp
+- name: 两线段是否相交
+  codes: intersect-ss.hpp
+- name: 两直线是否垂直
+  codes: is-orthogonal.hpp
+- name: 两直线是否平行
+  codes: is-parallel.hpp
+- name: 两直线是否相同
+  codes: is-same-line.hpp
+- name: 判矩形/正方形
+  codes: is-square.hpp
+- name: 两点在直线同侧/异侧
+  codes: point-line-side.hpp
+- name: 点是否在直线左侧
+  codes: point-on-line-left.hpp
+- name: 点在直线上/三点共线
+  codes: point-on-line.hpp
+- name: 点在线段上
+  codes: point-on-segment.hpp
+- name: 点在多边形内外
+  codes: point-polygon-positional-relationships.hpp
+- name: 线段在多边形内
+  codes: segment-in-polygon.hpp

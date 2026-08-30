@@ -1,0 +1,11 @@
+contents:
+- name: 两圆交点
+  codes: cross-point-cc.hpp
+- name: 直线与圆交点
+  codes: cross-point-cl.hpp
+- name: 线段与圆交点
+  codes: cross-point-cs.hpp
+- name: 两直线交点
+  codes: cross-point-ll.hpp
+- name: 两线段交点
+  codes: cross-point-ss.hpp

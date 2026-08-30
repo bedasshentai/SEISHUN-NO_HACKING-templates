@@ -1,0 +1,7 @@
+contents:
+- name: 点在空间三角形上
+  codes: point-on-triangle.hpp
+- name: 线段与空间三角形交点
+  codes: segment-triangle-cross.hpp
+- name: 两空间三角形相交
+  codes: triangle-intersection.hpp

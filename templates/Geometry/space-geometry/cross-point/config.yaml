@@ -1,0 +1,7 @@
+contents:
+- name: 空间两直线交点
+  codes: line-intersection.hpp
+- name: 直线与平面交点
+  codes: line-plane-cross.hpp
+- name: 两平面交线
+  codes: plane-intersection.hpp

@@ -1,0 +1,13 @@
+contents:
+- name: 最近点对
+  codes: closest-pair.hpp
+- name: 带下标凸包
+  codes: convex-hull-with-index.hpp
+- name: 凸包
+  codes: convex-hull.hpp
+- name: 半平面交
+  codes: halfplane-intersection.hpp
+- name: 最小圆覆盖
+  codes: minimum-covering-circle.hpp
+- name: 闵可夫斯基和
+  codes: minkowski-sum.hpp

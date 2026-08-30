@@ -63,7 +63,7 @@ def get_config(directory, filename=None):
 
 def detect_style_by_extension(filename: str) -> str:
     """根据文件扩展名返回 LaTeX lstlisting style"""
-    if filename.endswith(".cpp"):
+    if filename.endswith((".cpp", ".hpp", ".h")):
         return "cppstyle"
     elif filename.endswith(".java"):
         return "javastyle"

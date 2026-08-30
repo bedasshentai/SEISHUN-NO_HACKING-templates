@@ -1,0 +1,5 @@
+contents:
+- name: 正 N 棱锥体积
+  codes: pyramid-volume.hpp
+- name: 四面体体积
+  codes: tetrahedron-volume.hpp

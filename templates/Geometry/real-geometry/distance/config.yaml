@@ -1,0 +1,13 @@
+contents:
+- name: 点到线段最近点
+  codes: closest-point-sp.hpp
+- name: 点到直线距离
+  codes: distance-lp.hpp
+- name: 曼哈顿距离
+  codes: distance-manhattan.hpp
+- name: 两点欧氏距离
+  codes: distance-pp.hpp
+- name: 点到线段距离
+  codes: distance-sp.hpp
+- name: 线段到线段距离
+  codes: distance-ss.hpp

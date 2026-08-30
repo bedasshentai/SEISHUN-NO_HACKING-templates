@@ -1,0 +1,11 @@
+contents:
+- name: 两圆交叠面积
+  codes: common-area-cc.hpp
+- name: 圆与多边形交叠面积
+  codes: common-area-circle-polygon.hpp
+- name: 多边形面积
+  codes: polygon-area.hpp
+- name: 平行四边形有向面积
+  codes: quad-area.hpp
+- name: 三角形面积
+  codes: triangle-area.hpp

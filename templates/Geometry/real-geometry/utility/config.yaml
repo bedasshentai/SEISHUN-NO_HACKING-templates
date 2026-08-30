@@ -1,0 +1,17 @@
+contents:
+- name: 标量相等判定
+  codes: equals/real-number.hpp
+- name: 向量相等判定
+  codes: equals/vector.hpp
+- name: IO 加速与精度
+  codes: io-set.hpp
+- name: 环形下一个下标
+  codes: next-idx.hpp
+- name: 多边形转线段
+  codes: polygon-to-segments.hpp
+- name: 环形上一个下标
+  codes: prev-idx.hpp
+- name: 字符串读浮点
+  codes: read-float.hpp
+- name: 符号函数
+  codes: sign.hpp

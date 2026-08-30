@@ -1,12 +1,16 @@
-﻿contents:
+contents:
   - name: 数学
     directory: Math
   - name: 图论
     directory: Graph
   - name: 数据结构
     directory: DataStructure
-  - name: 计算几何
-    directory: Geometry
+  - name: 计算几何（二维浮点）
+    directory: Geometry/real-geometry
+  - name: 计算几何（二维整数）
+    directory: Geometry/integer-geometry
+  - name: 计算几何（三维）
+    directory: Geometry/space-geometry
   - name: qsort
     codes:
       - qsort.cpp

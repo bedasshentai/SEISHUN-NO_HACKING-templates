@@ -1,0 +1,9 @@
+contents:
+- name: 三点转向判定
+  codes: ccw.hpp
+- name: 叉乘
+  codes: cross-product.hpp
+- name: 点乘
+  codes: inner-product.hpp
+- name: 向量旋转 90°
+  codes: perpendicular.hpp

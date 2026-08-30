@@ -1,0 +1,5 @@
+contents:
+- name: 按 x 排序比较
+  codes: compare-x.hpp
+- name: 按 y 排序比较
+  codes: compare-y.hpp

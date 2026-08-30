@@ -1,0 +1,7 @@
+contents:
+- name: 半平面切割凸多边形
+  codes: convex-cut.hpp
+- name: 凸多边形直径
+  codes: convex-diameter.hpp
+- name: 凸多边形判定
+  codes: is-convex.hpp

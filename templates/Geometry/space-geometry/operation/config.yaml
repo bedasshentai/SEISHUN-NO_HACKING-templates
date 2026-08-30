@@ -1,0 +1,9 @@
+contents:
+- name: 三维叉乘
+  codes: cross.hpp
+- name: 三维点乘
+  codes: dot.hpp
+- name: 模长/距离/单位向量
+  codes: length.hpp
+- name: 平面法向量/叉乘模长
+  codes: normal.hpp

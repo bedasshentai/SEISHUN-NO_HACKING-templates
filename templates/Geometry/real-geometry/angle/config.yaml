@@ -1,0 +1,15 @@
+contents:
+- name: 余弦定理求角
+  codes: cosine-rule.hpp
+- name: 角度转弧度
+  codes: degree-to-radian.hpp
+- name: 有向角
+  codes: get-signed-angle.hpp
+- name: 两向量夹角
+  codes: get-smaller-angle.hpp
+- name: 弧度转角度
+  codes: radian-to-degree.hpp
+- name: 点绕点旋转
+  codes: rotate-point.hpp
+- name: 两向量夹角
+  codes: vector-angle.hpp

@@ -1,0 +1,27 @@
+contents:
+- name: 整数类型别名
+  codes: alias.hpp
+- name: 极角排序比较
+  codes: argcmp.hpp
+- name: 格点圆
+  codes: circle.hpp
+- name: 叉乘
+  codes: det.hpp
+- name: 点乘
+  codes: dot.hpp
+- name: 动态凸包
+  codes: dynamic-convex-hull.hpp
+- name: 环形下一个下标
+  codes: nidx.hpp
+- name: 质心×n
+  codes: ntimes_centroid.hpp
+- name: 格点
+  codes: point.hpp
+- name: 格点集
+  codes: points.hpp
+- name: 网格点计数
+  codes: polygon-grid.hpp
+- name: 格点多边形
+  codes: polygon.hpp
+- name: 面积×2
+  codes: twice_area.hpp

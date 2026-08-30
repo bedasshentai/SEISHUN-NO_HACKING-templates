@@ -1,0 +1,11 @@
+contents:
+- name: 转向常量
+  codes: ccw.hpp
+- name: 精确分数
+  codes: fraction.hpp
+- name: 点在多边形位置常量
+  codes: position-of-point-polygon.hpp
+- name: 实数域 gcd
+  codes: real-gcd.hpp
+- name: 符号常量
+  codes: sign.hpp

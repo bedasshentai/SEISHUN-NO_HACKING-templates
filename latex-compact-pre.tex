@@ -1,8 +1,11 @@
 \documentclass{article}
 \usepackage[fontset=none]{ctex}
 \usepackage{amsmath, amsthm, amssymb}
+\newtheorem{lemma}{引理}
+\newtheorem{theorem}{定理}
 \usepackage{lmodern}
 \usepackage{listings,xcolor}
+\usepackage[table]{xcolor}
 \usepackage{geometry}
 \usepackage{fontspec}
 \usepackage{graphicx}
@@ -16,17 +19,20 @@
 \setlength{\footskip}{20pt} % 减小页脚间距
 
 % 字体设置
-\setCJKmainfont{Source Han Sans HW SC}[
-  ItalicFont={Source Han Sans HW SC},
-  ItalicFeatures={FakeSlant=0.2}
+\setCJKmainfont{SourceHanSansHWSC-Regular.otf}[
+  Path=./,
+  AutoFakeBold=1.5,
+  FakeSlant=0.05
 ]
-\setCJKsansfont{Source Han Sans HW SC}[
-  ItalicFont={Source Han Sans HW SC},
-  ItalicFeatures={FakeSlant=0.2}
+\setCJKsansfont{SourceHanSansHWSC-Regular.otf}[
+  Path=./,
+  AutoFakeBold=1.5,
+  FakeSlant=0.05
 ]
-\setCJKmonofont{Source Han Sans HW SC}[
-  ItalicFont={Source Han Sans HW SC},
-  ItalicFeatures={FakeSlant=0.2}
+\setCJKmonofont{SourceHanSansHWSC-Regular.otf}[
+  Path=./,
+  AutoFakeBold=1.5,
+  FakeSlant=0.05
 ]
 
 \setmainfont{Inconsolata LGC Nerd Font Mono}
@@ -111,6 +117,13 @@
 \titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}{\small\bfseries}{\thesubsubsection}{1em}{}
+
+% 自定义内部小节标题（不编号，不进入目录）
+\newcommand{\subsubsubsection}[1]{%
+  \vspace{1.2ex plus 0.2ex}%
+  {\normalsize\bfseries #1}%
+  \vspace{0.8ex plus 0.1ex}\par
+}
 
 % 目录样式设置
 \usepackage{tocloft}

@@ -1,0 +1,23 @@
+contents:
+- name: 两直线平行/垂直
+  codes: line-parallel.hpp
+- name: 直线与平面平行
+  codes: line-plane-parallel.hpp
+- name: 三点共线
+  codes: on-line.hpp
+- name: 四点共面
+  codes: on-plane.hpp
+- name: 两平面平行/垂直
+  codes: plane-parallel.hpp
+- name: 点在空间线段上
+  codes: point-on-segment.hpp
+- name: 两点在平面同侧
+  codes: point-plane-side.hpp
+- name: 两点在线段同侧
+  codes: point-segment-side.hpp
+- name: 两直线是否相同
+  codes: same-line.hpp
+- name: 两平面是否相同
+  codes: same-plane.hpp
+- name: 两空间线段相交
+  codes: segment-intersection.hpp
