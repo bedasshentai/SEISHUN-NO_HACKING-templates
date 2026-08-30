@@ -14,7 +14,6 @@ $$
 
 我们插入一个新元素时，有两种方案：
 
-
 \begin{itemize}
     \item 将新元素单独放入一个子集，有 $\begin{Bmatrix}n-1\\ k-1\end{Bmatrix}$ 种方案；
     \item 将新元素放入一个现有的非空子集，有 $k\begin{Bmatrix}n-1\\ k\end{Bmatrix}$ 种方案。
@@ -108,15 +107,15 @@ $$
 
 类似第二类斯特林数，我们构造同行第一类斯特林数的生成函数，即
 
-$F_n(x)=\sum\limits_{i=0}^n\begin{bmatrix}n\\i\end{bmatrix}x^i$
+$$F_n(x)=\sum\limits_{i=0}^n\begin{bmatrix}n\\i\end{bmatrix}x^i$$
 
 根据递推公式，不难写出
 
-$F_n(x)=(n-1)F_{n-1}(x)+xF_{n-1}(x)$
+$$F_n(x)=(n-1)F_{n-1}(x)+xF_{n-1}(x)$$
 
 于是
 
-$F_n(x)=\prod\limits_{i=0}^{n-1}(x+i)=\dfrac{(x+n-1)!}{(x-1)!}$
+$$F_n(x)=\prod\limits_{i=0}^{n-1}(x+i)=\dfrac{(x+n-1)!}{(x-1)!}$$
 
 这其实是 $x$ 的 $n$ 次上升阶乘幂，记做 $x^{\overline n}$。这个东西自然是可以暴力分治乘 $O(n\log^2n)$ 求出的，但用上升幂相关做法可以 $O(n\log n)$ 求出，即多项式平移或连续点值平移。
 
@@ -126,7 +125,7 @@ $F_n(x)=\prod\limits_{i=0}^{n-1}(x+i)=\dfrac{(x+n-1)!}{(x-1)!}$
 
 显然，单个轮换的指数型生成函数为
 
-$F(x)=\sum\limits_{i=1}^n\dfrac{(i-1)!x^i}{i!}=\sum\limits_{i=1}^n\dfrac{x^i}{i}$
+$$F(x)=\sum\limits_{i=1}^n\dfrac{(i-1)!x^i}{i!}=\sum\limits_{i=1}^n\dfrac{x^i}{i}$$
 
 它的 $k$ 次幂就是 $\begin{bmatrix}i\\k\end{bmatrix}$ 的指数型生成函数，$O(n\log n)$ 计算即可。
 
