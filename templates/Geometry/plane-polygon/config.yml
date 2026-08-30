@@ -1,0 +1,18 @@
+contents:
+- name: 两向量构成的平面四边形有向面积
+  codes: quad-area.cpp
+- name: 判断四个点能否组成矩形/正方形
+  codes: is-square.cpp
+  code-pre: is-square-pre.tex
+- name: 点是否在任意多边形内
+  codes: point-in-polygon.cpp
+  code-pre: point-in-polygon-pre.tex
+- name: 线段是否在任意多边形内部
+  codes: segment-in-polygon.cpp
+- name: 任意多边形的面积
+  codes: polygon-area.cpp
+- name: 皮克定理
+  code-pre: pick-theorem-pre.tex
+- name: 任意多边形上/内的网格点个数（仅能处理整数）
+  codes: polygon-grid.cpp
+  code-pre: polygon-grid-pre.tex

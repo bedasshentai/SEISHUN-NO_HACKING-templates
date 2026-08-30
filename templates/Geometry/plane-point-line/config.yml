@@ -1,0 +1,26 @@
+contents:
+- name: 点是否在直线上（三点是否共线）
+  codes: on-line.cpp
+- name: 点是否在向量（直线）左侧
+  codes: point-left.cpp
+  code-pre: point-left-pre.tex
+- name: 两点是否在直线同侧/异侧
+  codes: point-side.cpp
+- name: 两直线相交交点
+  codes: line-intersection.cpp
+  code-pre: line-intersection-pre.tex
+- name: 两直线是否平行/垂直/相同
+  codes: line-parallel.cpp
+- name: 点到直线的最近距离与最近点
+  codes: point-to-line.cpp
+- name: 点是否在线段上
+  codes: point-on-segment.cpp
+- name: 点到线段的最近距离与最近点
+  codes: point-to-segment.cpp
+- name: 点在直线上的投影点（垂足）
+  codes: project.cpp
+- name: 线段的中垂线
+  codes: mid-segment.cpp
+- name: 两线段是否相交及交点
+  codes: segment-intersection.cpp
+  code-pre: segment-intersection-pre.tex

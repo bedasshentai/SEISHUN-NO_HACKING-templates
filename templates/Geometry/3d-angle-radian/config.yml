@@ -1,0 +1,8 @@
+contents:
+- name: 空间两直线夹角的 cos 值
+  codes: 3d-line-cos.cpp
+  code-pre: 3d-line-cos-pre.tex
+- name: 空间两平面夹角的 cos 值
+  codes: plane-cos.cpp
+- name: 直线与平面夹角的 sin 值
+  codes: line-plane-sin.cpp

@@ -1,0 +1,16 @@
+contents:
+- name: 正N棱锥体积公式
+  codes: pyramid-volume.cpp
+  code-pre: pyramid-volume-pre.tex
+- name: 四面体体积
+  codes: tetrahedron-volume.cpp
+- name: 点是否在空间三角形上
+  codes: 3d-point-on-triangle.cpp
+  code-pre: 3d-point-on-triangle-pre.tex
+- name: 线段是否与空间三角形相交及交点
+  codes: segment-triangle-cross.cpp
+  code-pre: segment-triangle-cross-pre.tex
+- name: 空间三角形是否相交
+  codes: triangle-intersection-3d.cpp
+  code-pre: triangle-intersection-3d-pre.tex
+  code-post: triangle-intersection-3d-post.tex

@@ -1,0 +1,23 @@
+contents:
+- name: 字符串读入浮点数
+  codes: read-float.cpp
+- name: 预置函数
+  codes: preset.cpp
+- name: 点线封装
+  codes: point-line.cpp
+- name: 叉乘
+  codes: cross.cpp
+  code-pre: cross-pre.tex
+- name: 点乘
+  codes: dot.cpp
+  code-pre: dot-pre.tex
+- name: 欧几里得距离公式
+  codes: euclidean-dis.cpp
+  code-pre: euclidean-dis-pre.tex
+- name: 曼哈顿距离公式
+  codes: manhattan-dis.cpp
+- name: 将向量转换为单位向量
+  codes: standardize.cpp
+- name: 向量旋转
+  codes: rotate.cpp
+  code-pre: rotate-pre.tex

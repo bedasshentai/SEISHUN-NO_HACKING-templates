@@ -1,0 +1,26 @@
+contents:
+- name: 点到圆的最近点
+  codes: point-to-circle.cpp
+  code-pre: point-to-circle-pre.tex
+- name: 根据圆心角获取圆上某点
+  codes: get-point-on-circle.cpp
+  code-pre: get-point-on-circle-pre.tex
+- name: 直线是否与圆相交及交点
+  codes: line-circle-cross.cpp
+  code-pre: line-circle-cross-pre.tex
+- name: 线段是否与圆相交及交点
+  codes: segment-circle-cross.cpp
+  code-pre: segment-circle-cross-pre.tex
+- name: 两圆是否相交及交点
+  codes: circle-intersection.cpp
+  code-pre: circle-intersection-pre.tex
+- name: 两圆相交面积
+  codes: circle-intersection-area.cpp
+  code-pre: circle-intersection-area-pre.tex
+- name: 三点确定一圆
+  codes: get-circle.cpp
+- name: 求解点到圆的切线数量与切点
+  codes: tangent-point.cpp
+- name: 求解两圆的内公、外公切线数量与切点
+  codes: tangent-circles.cpp
+  code-pre: tangent-circles-pre.tex

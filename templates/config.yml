@@ -5,6 +5,8 @@
     directory: Graph
   - name: 数据结构
     directory: DataStructure
+  - name: 计算几何
+    directory: Geometry
   - name: qsort
     codes:
       - qsort.cpp

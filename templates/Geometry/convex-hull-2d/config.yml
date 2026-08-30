@@ -1,0 +1,16 @@
+contents:
+- name: 获取二维静态凸包（Andrew算法）
+  codes: static-convex-hull.cpp
+  code-pre: static-convex-hull-pre.tex
+- name: 二维动态凸包
+  codes: dynamic-convex-hull.cpp
+  code-pre: dynamic-convex-hull-pre.tex
+- name: 点与凸包的位置关系
+  codes: point-convex-hull.cpp
+  code-pre: point-convex-hull-pre.tex
+- name: 闵可夫斯基和
+  codes: minkowski-sum.cpp
+  code-pre: minkowski-sum-pre.tex
+- name: 半平面交
+  codes: halfplane-intersection.cpp
+  code-pre: halfplane-intersection-pre.tex
