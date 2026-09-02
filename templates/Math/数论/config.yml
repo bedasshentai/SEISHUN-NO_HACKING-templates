@@ -24,6 +24,8 @@ contents:
   - name: Miller-Rabin
     code-pre: Miller-Rabin-pre.tex
     codes: Miller-Rabin.cpp
+  - name: Pollard-Rho
+    codes: Pollard-Rho.cpp
   - name: 狄利克雷卷积
     codes: 
     code-pre: 狄利克雷卷积-pre.tex
