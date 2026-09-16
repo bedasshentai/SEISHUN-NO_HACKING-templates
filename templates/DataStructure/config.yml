@@ -1,7 +1,15 @@
 ﻿contents:
-  - name: disjoint_set_union
-    codes:
-      - disjoint_set_union.cpp
-  - name: fenwick-tree
-    codes:
-      - fenwick-tree.cpp
+  - name: 分块
+    codes: 分块.cpp
+  - name: 主席树
+    codes: 主席树.cpp
+  - name: 可持久化Trie
+    codes: 可持久化Trie.cpp
+  - name: 平衡树Treap
+    codes: Treap.cpp
+  - name: Splay
+    codes: Splay.cpp
+  - name: 树链剖分
+    codes: 树剖.cpp
+  - name: 左偏树
+    codes: 左偏树.cpp

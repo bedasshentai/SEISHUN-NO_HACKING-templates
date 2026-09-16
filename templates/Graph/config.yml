@@ -4,3 +4,7 @@
   - name: 全局最小割
     codes: Stoer-Wagner.cpp
     code-pre: Stoer-Wagner-pre.tex
+  - name: 有向图的强连通分量
+    codes: Directed-tarjan.cpp
+  - name: 无向图的双连通分量
+    codes: Bridge.cpp

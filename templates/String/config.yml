@@ -1,0 +1,9 @@
+contents:
+  - name: manacher
+    codes: manacher.cpp
+  - name: KMP
+    codes: KMP.cpp
+  - name: AC自动机
+    codes: AC自动机.cpp
+  - name: 后缀数组
+    codes: SA.cpp

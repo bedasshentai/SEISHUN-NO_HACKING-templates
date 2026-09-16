@@ -1,77 +1,64 @@
-struct Dinic {
-    struct Edge {
-        int v;
-        LL w;
-        Edge(int v, LL w) : v(v), w(w) {}
-    };
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 10010, M = 200010, INF = 1e8;
+int n, m, S, T;
+int h[N], e[M], f[M], ne[M], idx;
+int q[N], d[N], cur[N];
 
-    int n;
-    vector<Edge> edges;
-    vector<int> d, cur;
-    vector<vector<int>> e;
-    Dinic(int n) : n(n), d(n), cur(n), e(n) {}
+void add(int a, int b, int c) {
+    e[idx] = b, f[idx] = c, ne[idx] = h[a], h[a] = idx ++ ;
+    e[idx] = a, f[idx] = 0, ne[idx] = h[b], h[b] = idx ++ ;
+}
 
-    void reset(int n) { 
-        this->n = n;
-        edges.clear();
-        e.resize(n), d.resize(n), cur.resize(n);
-        for (int i = 0; i < n; ++i) 
-            e.clear();
-    }
-
-    void add(int u, int v, LL w) {
-        e[u].push_back(edges.size());
-        edges.emplace_back(v, w);
-        e[v].push_back(edges.size());
-        edges.emplace_back(u, 0);
-    }
-
-    bool bfs(int s, int t) {
-        d.assign(n, 0);
-        queue<int> q;
-        d[s] = 1;
-        q.push(s);
-        while (q.size()) {
-            int u = q.front();
-            q.pop();
-            for (int i : e[u]) {
-                auto [v, w] = edges[i];
-                if (w && !d[v]) {  // 有 w 才能保证正确性（能正确回溯）
-                    d[v] = d[u] + 1;
-                    q.push(v);
-                    if (v == t) return 1;
-                }
+bool bfs() {
+    int hh = 0, tt = 0;
+    memset(d, -1, sizeof d);
+    q[0] = S, d[S] = 0, cur[S] = h[S];
+    while (hh <= tt) {
+        int t = q[hh ++ ];
+        for (int i = h[t]; ~i; i = ne[i]) {
+            int ver = e[i];
+            if (d[ver] == -1 && f[i]) {
+                d[ver] = d[t] + 1;
+                cur[ver] = h[ver];
+                if (ver == T) return true;
+                q[ ++ tt] = ver;
             }
         }
-        return 0;
     }
+    return false;
+}
 
-    LL maxFlow(int s, int t) {
-        LL maxflow = 0;
-
-        auto dfs = [&](auto &&self, int u, LL flow) -> LL {
-            if (u == t) {
-                return flow;  // 返回至多能减多少。
-            }
-            LL rest = flow;
-            for (int &i = cur[u]; i < (int)e[u].size(); ++i) {
-                int j = e[u][i];
-                auto [v, w] = edges[j];
-                if (w && d[v] == d[u] + 1) {
-                    LL k = self(self, v, min(rest, w));
-                    if (!k) d[v] = 0;
-                    rest -= k, edges[j].w -= k, edges[j ^ 1].w += k;
-                    if (!rest) break;  // 这里 break 才能保证复杂度。
-                }
-            }
-            return flow - rest;
-        };
-
-        while (bfs(s, t)) {
-            cur.assign(n, 0);
-            maxflow += dfs(dfs, s, numeric_limits<LL>::max());
+int find(int u, int limit) {
+    if (u == T) return limit;
+    int flow = 0;
+    for (int i = cur[u]; ~i && flow < limit; i = ne[i]) {
+        cur[u] = i;
+        int ver = e[i];
+        if (d[ver] == d[u] + 1 && f[i]) {
+            int t = find(ver, min(f[i], limit - flow));
+            if (!t) d[ver] = -1;
+            f[i] -= t, f[i ^ 1] +=t, flow += t;
         }
-
-        return maxflow;
     }
-};
+    return flow;
+}
+
+int dinic() {
+    int r = 0, flow;
+    while (bfs()) while (flow = find(S, INF)) r += flow;
+    return r;
+}
+
+int main() {
+    scanf("%d%d%d%d", &n, &m, &S, &T);
+    memset(h, -1, sizeof h);
+    while (m -- ) {
+        int a, b, c;
+        scanf("%d%d%d", &a, &b, &c);
+        add(a, b, c);
+    }
+    int ans = dinic();
+    printf("%d", ans);
+    return 0;
+}

@@ -11,8 +11,5 @@ contents:
     directory: Geometry/integer-geometry
   - name: 计算几何（三维）
     directory: Geometry/space-geometry
-  - name: qsort
-    codes:
-      - qsort.cpp
-      - qsort.java
-      - qsort.py
+  - name: 字符串
+    directory: String
