@@ -100,8 +100,7 @@ int get_next(int &p, int key) { // 找后继
 }
 
 int main() {
-    build();
-    scanf("%d", &n);
+    build(); scanf("%d", &n);
     while (n -- ) {
         int op, x;
         scanf("%d%d", &op, &x);
