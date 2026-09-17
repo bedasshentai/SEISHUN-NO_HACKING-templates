@@ -5,11 +5,11 @@ contents:
     directory: Graph
   - name: 数据结构
     directory: DataStructure
+  - name: 字符串
+    directory: String
   - name: 计算几何（二维浮点）
     directory: Geometry/real-geometry
   - name: 计算几何（二维整数）
     directory: Geometry/integer-geometry
   - name: 计算几何（三维）
     directory: Geometry/space-geometry
-  - name: 字符串
-    directory: String
