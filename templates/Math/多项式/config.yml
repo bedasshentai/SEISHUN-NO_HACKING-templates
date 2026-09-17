@@ -29,12 +29,11 @@
   - name: 多项式求exp
     codes: Poly-exp.cpp
     code-pre: Poly-exp-pre.tex
-  - name: 多项式快速幂(A[0]=1)
-    codes: Poly-pow1.cpp
-    code-pre: Poly-pow1-pre.tex
-  - name: 多项式快速幂(A[0]!=1)
-    codes: Poly-pow2.cpp
-    code-pre: Poly-pow2-pre.tex
+  - name: 多项式快速幂
+    code-pre: Poly-pow-pre.tex
+    codes:
+      - Poly-pow1.cpp
+      - Poly-pow2.cpp
   - name: 多项式三角函数
     codes: Poly-triangle.cpp
     code-pre: Poly-triangle-pre.tex

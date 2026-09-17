@@ -1,4 +1,4 @@
-void Poly_pow(int *f, int n, string k) {
+void Poly_pow(int *f, int n, string k) { // A[0] != 1
     int k1 = 0, k2 = 0, p = 0, c;
     while (!f[p]) p ++ ;
     for (int i = 0; k[i]; i ++ ) {
