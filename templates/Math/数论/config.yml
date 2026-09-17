@@ -36,3 +36,6 @@ contents:
   - name: Powerful Number 筛
     code-pre: PN-pre.tex
     codes: PN.cpp
+  - name: Min25
+    code-pre: Min25-pre.tex
+    codes: Min25.cpp

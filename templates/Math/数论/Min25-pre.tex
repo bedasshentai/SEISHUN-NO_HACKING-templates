@@ -1,0 +1,16 @@
+对积性函数 $f(x)$，如果能够快速知道 $f(p^k)$ 的值，且 $f(p)$ 可以被表示为项数较少的多项式使得每一项都是 **完全积性函数**，则可以在 $O\left(\dfrac{n^{\frac{3}{4}}}{\log{n}}\right)$ 的复杂度内求出 $\sum\limits_{p \le n} f(i)$。 
+
+设 $g(n) = \sum\limits_{p \le n} f(p)$，其中 $f(p)$ 是完全积性函数，而 $g(n)$ 不易直接求解，所以考虑 DP。
+
+设 $g(n, \, j) = \sum\limits_{i = 1}^{n}f(i)[i \in \mathbb{P}\text{或其最小质因子} > p_j]$，其中 $p_j$ 表示第 $j$ 个质数，故 $g(n, \, 0) = \sum\limits_{i = 1}^{n} f(i)$ 则显然我们需要使得第二个条件失效，即 $p_k \ge \sqrt{n}$，考虑从 $j - 1$ 项到第 $j$ 项的 DP，筛去最小质因子为 $p_j$ 的合数，有转移：
+
+$$g(n, \, j) = g(n, \, j - 1) - f(p_j)\left(g\left(\left\lfloor\frac{n}{p_j}\right\rfloor, \, j - 1\right) - g(p_{j - 1}, \, j - 1)\right)$$
+
+因为 $f(p)$ 是完全积性函数，所以可以从后面提出来。$g\left(\left\lfloor\dfrac{n}{p_j}\right\rfloor, \, j - 1\right)$ 表示考虑所有 $p_j$ 的倍数，他们除以 $p_j$ 之后，最小质因子 $> p_{j - 1}$ 的合数以及所有质数的贡献，应当减去所有 $\le p_{j - 1}$ 的质数，他们已经被筛过了，即 $g(p_{j - 1}, \, j - 1)$。
+
+因为 $\left\lfloor\frac{\left\lfloor\frac{a}{b}\right\rfloor}{c}\right\rfloor = \left\lfloor\frac{a}{bc}\right\rfloor$，所以上述 DP 只用到了 $\left\lfloor\dfrac{n}{x}\right\rfloor$ 位置的值，即第一维有 $O(\sqrt{n})$ 个状态（注。意实现时状态数有 $2\sqrt{n}$ 个（有一个重要结论是：$x$ 一定会在 $\left\lfloor\dfrac{n}{x}\right\rfloor$ 中出现，离散化这 $O(\sqrt{n})$ 个数，初始化 $g(x, \, 0)$ 即可。
+
+时间复杂度：
+
+$$\begin{aligned}&\sum_{i \le \sqrt{n}}O\left(\pi\left(\sqrt{i}\right)\right) + \sum_{i \le \sqrt{n}}O\left(\pi\left(\sqrt{\frac{n}{i}}\right)\right) \\ =&\sum_{i \le \sqrt{n}}O\left(\pi\left(\sqrt{\frac{n}{i}}\right)\right) \\ =&\sum_{i \le \sqrt{n}}O\left(\frac{\sqrt{\frac{n}{i}}}{\log{\sqrt{\frac{n}{i}}}}\right) \\ =&O\left(\int_{1}^{\sqrt{n}}\frac{\sqrt{\frac{n}{x}}}{\log{\sqrt{\frac{n}{x}}}}dx\right) \\ =&O\left(\frac{n^{\frac{3}{4}}}{\log{n}}\right) \end{aligned}$$
+
