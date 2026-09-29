@@ -13,3 +13,5 @@
     codes: 树剖.cpp
   - name: 左偏树
     codes: 左偏树.cpp
+  - name: K-D Tree
+    codes: KDT.cpp

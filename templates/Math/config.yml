@@ -23,3 +23,5 @@
   - name: 亚线性 Faray 数列
     code-pre: Faray-master-pre.tex
     codes: Faray-master.cpp
+  - name: 康拓展开
+    codes: cantor.cpp
